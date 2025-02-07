@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 10;
+    public float speed = 2;
     
     Rigidbody rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
