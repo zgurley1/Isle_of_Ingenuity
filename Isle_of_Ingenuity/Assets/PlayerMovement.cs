@@ -1,22 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public float speed = 2;
-    
-    Rigidbody rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float moveSpeed = 5f;
+    public float jumpForce = 10f;
+    private bool isGrounded;
+
+    private Rigidbody rb;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float xspeed = Input.GetAxisRaw("Horizontal");
-        float zspeed = Input.GetAxisRaw("Vertical");
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
+        Vector3 move = new Vector3(moveX, 0, moveZ) * moveSpeed;
+        rb.linearVelocity = new Vector3(move.x, rb.linearVelocity.y, move.z);
 
-        rb.linearVelocity = new Vector3(xspeed, rb.linearVelocity.y, zspeed) * speed;
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
     }
 }
