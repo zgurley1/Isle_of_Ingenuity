@@ -7,9 +7,21 @@ using UnityEngine.UI;
 public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [HideInInspector] public Item item;
     public Image image;
 
     [HideInInspector] public Transform parentAfterDrag;
+
+    // private void Start()
+    // {
+    //     InitializeItem(item);
+    // }
+
+    public void InitializeItem(Item newItem){
+        item = newItem;
+        image.sprite = newItem.image;
+    }
 
     public void OnBeginDrag(PointerEventData eventData) {
         // Cursor.visible = true;
