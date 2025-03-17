@@ -8,8 +8,12 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    [HideInInspector] public Item item;
     public Image image;
+    public Text countText;
+
+    [HideInInspector] public Item item;
+    [HideInInspector] public int count = 1;
+    
 
     [HideInInspector] public Transform parentAfterDrag;
 
@@ -21,6 +25,13 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
     public void InitializeItem(Item newItem){
         item = newItem;
         image.sprite = newItem.image;
+        RefereshCount();
+    }
+
+    public void RefereshCount() {
+        countText.text = count.ToString();
+        bool textActive = count > 1;
+        countText.gameObject.SetActive(textActive);
     }
 
     public void OnBeginDrag(PointerEventData eventData) {

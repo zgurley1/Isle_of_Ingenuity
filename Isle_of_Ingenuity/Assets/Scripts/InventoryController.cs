@@ -3,6 +3,7 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     public GameObject MainInventoryGroup; // Assign this in the Inspector
+    public GameObject TestGroup;
     public PlayerController playerController; // Assign PlayerController in the Inspector
 
     void Update()
@@ -11,8 +12,10 @@ public class InventoryController : MonoBehaviour
         {
             if (MainInventoryGroup != null)
             {
-                bool isActive = !MainInventoryGroup.activeSelf;
-                MainInventoryGroup.SetActive(isActive);
+                bool isMainActive = !MainInventoryGroup.activeSelf;
+                bool isTestActive = !TestGroup.activeSelf;
+                MainInventoryGroup.SetActive(isMainActive);
+                TestGroup.SetActive(isTestActive);
 
                 // Toggle inventory state
                 // playerController.ToggleInventory(isActive); // Pause camera and movement when inventory is open
