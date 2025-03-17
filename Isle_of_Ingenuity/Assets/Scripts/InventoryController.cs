@@ -15,7 +15,7 @@ public class InventoryController : MonoBehaviour
                 MainInventoryGroup.SetActive(isActive);
 
                 // Toggle inventory state
-                playerController.ToggleInventory(isActive); // Pause camera and movement when inventory is open
+                // playerController.ToggleInventory(isActive); // Pause camera and movement when inventory is open
             }
             else
             {

@@ -55,19 +55,19 @@ public class PlayerController : MonoBehaviour
     }
 
     // Call this function from the InventoryController to pause and unpause the game
-    public void ToggleInventory(bool isOpen)
-    {
-        isInventoryOpen = isOpen;
+    // public void ToggleInventory(bool isOpen)
+    // {
+    //     isInventoryOpen = isOpen;
 
-        if (isInventoryOpen)
-        {
-            Cursor.lockState = CursorLockMode.None; // Unlock cursor
-            Cursor.visible = true; // Show cursor
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked; // Lock cursor again
-            Cursor.visible = false; // Hide cursor
-        }
-    }
+    //     if (isInventoryOpen)
+    //     {
+    //         Cursor.lockState = CursorLockMode.None; // Unlock cursor
+    //         Cursor.visible = true; // Show cursor
+    //     }
+    //     else
+    //     {
+    //         Cursor.lockState = CursorLockMode.Locked; // Lock cursor again
+    //         Cursor.visible = false; // Hide cursor
+    //     }
+    // }
 }
