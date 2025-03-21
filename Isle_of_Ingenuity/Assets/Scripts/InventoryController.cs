@@ -16,7 +16,7 @@ public class InventoryController : MonoBehaviour
                 bool isMainActive = !MainInventoryGroup.activeSelf;
                 bool isTestActive = !TestGroup.activeSelf;
                 MainInventoryGroup.SetActive(isMainActive);
-                TestGroup.SetActive(isTestActive);
+                // TestGroup.SetActive(isTestActive);
 
                 // Toggle inventory state
                 // playerController.ToggleInventory(isActive); // Pause camera and movement when inventory is open
