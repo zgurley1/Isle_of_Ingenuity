@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  image: {fileID: 21300000, guid: 7019ba33fd07c9d408060b12066d85b7, type: 3}
+  image: {fileID: 21300000, guid: 21fc1416f162657488b18f9cace2d35c, type: 3}
   type: 1
   actionType: 1
   range: {x: 5, y: 4}

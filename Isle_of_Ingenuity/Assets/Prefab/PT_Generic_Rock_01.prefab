@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &163004174657376329
+--- !u!1 &97777321185061624
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3315714296393109856}
-  - component: {fileID: 7901795786038575910}
-  - component: {fileID: 7525788340159858592}
+  - component: {fileID: 5261475819432722002}
+  - component: {fileID: 4640807867972747316}
+  - component: {fileID: 1481742492710793884}
   m_Layer: 0
-  m_Name: PT_Fruit_Tree_01_apples_LOD1
+  m_Name: PT_Generic_Rock_01_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3315714296393109856
+--- !u!4 &5261475819432722002
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163004174657376329}
+  m_GameObject: {fileID: 97777321185061624}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6419187236850804161}
+  m_Father: {fileID: 1599885164016622076}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7901795786038575910
+--- !u!33 &4640807867972747316
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163004174657376329}
-  m_Mesh: {fileID: 8437342880481029371, guid: fb0559a36ae9650449b6e3c26d5076a5, type: 3}
---- !u!23 &7525788340159858592
+  m_GameObject: {fileID: 97777321185061624}
+  m_Mesh: {fileID: -3282209725294213285, guid: f226223b3a11d2d4b980aaa520301583, type: 3}
+--- !u!23 &1481742492710793884
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163004174657376329}
+  m_GameObject: {fileID: 97777321185061624}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -64,8 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a1f44318dd467a45bfef81ad0e8855a, type: 2}
-  - {fileID: 2100000, guid: 3922c043c1c52cb47a7b1bfed562a4b6, type: 2}
+  - {fileID: 2100000, guid: 93415edde47040648869ae6638d33ced, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4396159832342145111
+--- !u!1 &1308393102758193653
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,46 +94,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2364243790871939078}
-  - component: {fileID: 4604217538834115015}
-  - component: {fileID: 6038074568851490021}
+  - component: {fileID: 2790093259422356514}
+  - component: {fileID: 2461408924496235857}
+  - component: {fileID: 5401688993263243069}
   m_Layer: 0
-  m_Name: PT_Fruit_Tree_01_apples_LOD2
+  m_Name: PT_Generic_Rock_01_LOD2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2364243790871939078
+--- !u!4 &2790093259422356514
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4396159832342145111}
+  m_GameObject: {fileID: 1308393102758193653}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6419187236850804161}
+  m_Father: {fileID: 1599885164016622076}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4604217538834115015
+--- !u!33 &2461408924496235857
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4396159832342145111}
-  m_Mesh: {fileID: -108839522260070907, guid: fb0559a36ae9650449b6e3c26d5076a5, type: 3}
---- !u!23 &6038074568851490021
+  m_GameObject: {fileID: 1308393102758193653}
+  m_Mesh: {fileID: -4657891268570775739, guid: f226223b3a11d2d4b980aaa520301583, type: 3}
+--- !u!23 &5401688993263243069
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4396159832342145111}
+  m_GameObject: {fileID: 1308393102758193653}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -151,8 +150,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a1f44318dd467a45bfef81ad0e8855a, type: 2}
-  - {fileID: 2100000, guid: 3922c043c1c52cb47a7b1bfed562a4b6, type: 2}
+  - {fileID: 2100000, guid: 93415edde47040648869ae6638d33ced, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,7 +172,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5935278547815300987
+--- !u!1 &1723959112359343785
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,45 +180,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6419187236850804161}
-  - component: {fileID: 2256188382494855856}
-  - component: {fileID: -4790832639948371688}
-  - component: {fileID: -8098279016375055359}
+  - component: {fileID: 1599885164016622076}
+  - component: {fileID: 8134393554314414045}
+  - component: {fileID: 8458142740743066731}
+  - component: {fileID: 1791935773338344830}
   m_Layer: 0
-  m_Name: PT_Fruit_Tree_01_apples
-  m_TagString: Tree
+  m_Name: PT_Generic_Rock_01
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6419187236850804161
+--- !u!4 &1599885164016622076
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5935278547815300987}
+  m_GameObject: {fileID: 1723959112359343785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.7232254, y: 0.5, z: -2.5796251}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2123385224588831687}
-  - {fileID: 3315714296393109856}
-  - {fileID: 2364243790871939078}
+  - {fileID: 5261475819432722002}
+  - {fileID: 962053605792465293}
+  - {fileID: 2790093259422356514}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!205 &2256188382494855856
+--- !u!205 &8134393554314414045
 LODGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5935278547815300987}
+  m_GameObject: {fileID: 1723959112359343785}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: -0.053788185, y: 3.1455173, z: -0.5286331}
-  m_Size: 7.8219233
+  m_LocalReferencePoint: {x: -0.005520433, y: 0.12129615, z: 0.002885133}
+  m_Size: 0.25192297
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
@@ -228,23 +226,23 @@ LODGroup:
   - screenRelativeHeight: 0.25
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 340751423047132367}
+    - renderer: {fileID: 1481742492710793884}
   - screenRelativeHeight: 0.125
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 7525788340159858592}
-  - screenRelativeHeight: 0.061942484
+    - renderer: {fileID: 1733698486345783219}
+  - screenRelativeHeight: 0.01
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 6038074568851490021}
+    - renderer: {fileID: 5401688993263243069}
   m_Enabled: 1
---- !u!136 &-4790832639948371688
+--- !u!136 &8458142740743066731
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5935278547815300987}
+  m_GameObject: {fileID: 1723959112359343785}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -257,17 +255,17 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 5
+  m_Radius: 0.15
+  m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &-8098279016375055359
+--- !u!136 &1791935773338344830
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5935278547815300987}
+  m_GameObject: {fileID: 1723959112359343785}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -280,11 +278,11 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
-  m_Height: 5
+  m_Radius: 0.25
+  m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &7513603357302551873
+--- !u!1 &3858752844978677473
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,48 +290,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2123385224588831687}
-  - component: {fileID: 4006941177706727810}
-  - component: {fileID: 340751423047132367}
-  - component: {fileID: 1887537154420711756}
-  - component: {fileID: 2027125257428424606}
+  - component: {fileID: 962053605792465293}
+  - component: {fileID: 1814446415747843276}
+  - component: {fileID: 1733698486345783219}
   m_Layer: 0
-  m_Name: PT_Fruit_Tree_01_apples_LOD0
-  m_TagString: Tree
+  m_Name: PT_Generic_Rock_01_LOD1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2123385224588831687
+--- !u!4 &962053605792465293
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7513603357302551873}
+  m_GameObject: {fileID: 3858752844978677473}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6419187236850804161}
+  m_Father: {fileID: 1599885164016622076}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4006941177706727810
+--- !u!33 &1814446415747843276
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7513603357302551873}
-  m_Mesh: {fileID: -65089136688577580, guid: fb0559a36ae9650449b6e3c26d5076a5, type: 3}
---- !u!23 &340751423047132367
+  m_GameObject: {fileID: 3858752844978677473}
+  m_Mesh: {fileID: 2253944659315782737, guid: f226223b3a11d2d4b980aaa520301583, type: 3}
+--- !u!23 &1733698486345783219
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7513603357302551873}
+  m_GameObject: {fileID: 3858752844978677473}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -350,8 +346,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3922c043c1c52cb47a7b1bfed562a4b6, type: 2}
-  - {fileID: 2100000, guid: 0a1f44318dd467a45bfef81ad0e8855a, type: 2}
+  - {fileID: 2100000, guid: 93415edde47040648869ae6638d33ced, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -373,49 +368,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1887537154420711756
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7513603357302551873}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.41
-  m_Height: 5.23
-  m_Direction: 1
-  m_Center: {x: -0.05178237, y: 1, z: -0.11}
---- !u!136 &2027125257428424606
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7513603357302551873}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.5
-  m_Height: 4.98
-  m_Direction: 1
-  m_Center: {x: -0.05178237, y: 1.45, z: -0.16}
