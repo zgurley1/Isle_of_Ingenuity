@@ -10,9 +10,11 @@ public class PlayerController : MonoBehaviour
     
     private bool isGrounded;
     private Rigidbody rb;
-    private float rotationX = 0f;
+    // private float rotationX = 0f;
+    // private float rotationY = 0f;
 
     public bool isInventoryOpen = false;
+    public Transform cameraTransform;
 
     void Start()
     {
@@ -36,14 +38,16 @@ public class PlayerController : MonoBehaviour
         }
 
         // Mouse look
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        // float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        // float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-        rotationX -= mouseY;
-        rotationX = Mathf.Clamp(rotationX, -90f, 90f); // Limit vertical rotation
+        // rotationX -= mouseY;
+        // rotationY += mouseX;
+        // rotationX = Mathf.Clamp(rotationX, -90f, 90f); // Limit vertical rotation
         
-        transform.Rotate(Vector3.up * mouseX);
-        Camera.main.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
+        // transform.Rotate(Vector3.up * mouseX);
+        // Camera.main.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f);
+
     }
 
     void OnCollisionEnter(Collision collision)
