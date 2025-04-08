@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 2256188382494855856}
   - component: {fileID: -4790832639948371688}
   - component: {fileID: -8098279016375055359}
+  - component: {fileID: 4134697780957859279}
   m_Layer: 0
   m_Name: PT_Fruit_Tree_01_apples
   m_TagString: Tree
@@ -201,7 +202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5935278547815300987}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -284,6 +285,23 @@ CapsuleCollider:
   m_Height: 5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4134697780957859279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5935278547815300987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ac9b076f3f6a240bba31cca842f7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  dropItem: {fileID: 11400000, guid: fea95de606198be47813e41a332514fa, type: 2}
+  requiredTool: 0
+  axeItem: {fileID: 11400000, guid: 06cb57afe56f2fd44bd6aa74d5de3438, type: 2}
+  pickaxeItem: {fileID: 11400000, guid: fa0ee1306f697bf4c9a202d7c9a9d328, type: 2}
 --- !u!1 &7513603357302551873
 GameObject:
   m_ObjectHideFlags: 0

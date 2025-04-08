@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ReplaceTerrainObjects : MonoBehaviour
 {
-    public Terrain terrain; // Assign your terrain in the Inspector
-    public GameObject[] treePrefabs; // Assign prefabs in order (apple tree, pear tree, rocks, etc.)
+    public Terrain terrain;
+    public GameObject[] treePrefabs;
 
     void Start()
     {
