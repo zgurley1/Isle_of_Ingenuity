@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Tree
   - Rock
+  - CinemachineTarget
+  - UpgradeStation
   layers:
   - Default
   - TransparentFX

@@ -247,7 +247,6 @@ GameObject:
   m_Component:
   - component: {fileID: 368832078}
   - component: {fileID: 368832080}
-  - component: {fileID: 368832079}
   - component: {fileID: 368832081}
   m_Layer: 8
   m_Name: Interaction_manager
@@ -271,18 +270,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1660143005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &368832079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368832077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d735a0a4c7514c34aa0f7fcde76ce05e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &368832080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,12 +295,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 368832077}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35218c1bf1049544b4b1fc40fb29810, type: 3}
+  m_Script: {fileID: 11500000, guid: 79428d634babb134a979124f0b272f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildMenu: {fileID: 0}
-  TestGroup: {fileID: 0}
-  playerController: {fileID: 0}
+  canOpenUpgradeScreen: 0
 --- !u!114 &371607879 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6235260690894254260, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
@@ -347,6 +332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820ca5190b804be419afff1761851889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &449537118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+  m_PrefabInstance: {fileID: 9072242023963740732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &451334854
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +422,10 @@ PrefabInstance:
     - target: {fileID: 5954596082880926028, guid: e4b72629bae630c40a8bce603386103b, type: 3}
       propertyPath: m_Name
       value: BoatDock-Damaged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804276755300386746, guid: e4b72629bae630c40a8bce603386103b, type: 3}
+      propertyPath: m_TagString
+      value: UpgradeStation
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2472,6 +2466,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 937451010987979973, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
   m_PrefabInstance: {fileID: 9072242023963740732}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1660143011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449537118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d735a0a4c7514c34aa0f7fcde76ce05e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1660143012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449537118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79428d634babb134a979124f0b272f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canOpenUpgradeScreen: 0
 --- !u!114 &1671321610 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7045371029899392511, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
@@ -4278,6 +4297,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5126527961139664765, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1562889993}
+    - targetCorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1660143011}
+    - targetCorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1660143012}
   m_SourcePrefab: {fileID: 100100000, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

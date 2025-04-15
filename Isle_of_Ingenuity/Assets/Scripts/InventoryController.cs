@@ -11,6 +11,13 @@ public class InventoryController : MonoBehaviour
     private bool buildActive = false;
     private bool upgradeActive = false;
 
+    private DockUpgradeZone dockUpgradeZone;
+
+    void Start() {
+        dockUpgradeZone = FindAnyObjectByType<DockUpgradeZone>();
+        Debug.LogWarning(dockUpgradeZone.canOpenUpgradeScreen);
+    }
+
     
 
     void Update()
@@ -50,8 +57,7 @@ public class InventoryController : MonoBehaviour
             }
         }
 
-        // Need to check for upgrade collider
-        if (Input.GetKeyDown(KeyCode.E))
+        if (dockUpgradeZone.canOpenUpgradeScreen && Input.GetKeyDown(KeyCode.E))
         {
             if (UpgradeMenuGroup != null)
             {
