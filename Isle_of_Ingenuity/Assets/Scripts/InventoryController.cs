@@ -7,13 +7,14 @@ public class InventoryController : MonoBehaviour
     public PlayerController playerController;
     public GameObject BuildMenuGroup;
 
+    private bool inventoryActive = false;
+    private bool buildActive = false;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if (MainInventoryGroup != null)
-            {
+            if (canActivate() && MainInventoryGroup != null) {
                 bool isMainActive = !MainInventoryGroup.activeSelf;
                 //bool isTestActive = !TestGroup.activeSelf;
                 MainInventoryGroup.SetActive(isMainActive);
@@ -30,10 +31,11 @@ public class InventoryController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            if (BuildMenuGroup != null)
+            if (canActivate() && BuildMenuGroup != null)
             {
-                bool isMainActive = !BuildMenuGroup.activeSelf;
-                BuildMenuGroup.SetActive(isMainActive);
+                    bool isMainActive = !BuildMenuGroup.activeSelf;
+                    BuildMenuGroup.SetActive(isMainActive);
+                
 
                 // Toggle inventory state
                 // playerController.ToggleInventory(isActive); // Pause camera and movement when inventory is open
@@ -43,6 +45,12 @@ public class InventoryController : MonoBehaviour
                 Debug.LogWarning("MainInventoryGroup 'build' is not assigned in the Inspector.");
             }
         }
+    }
+
+
+    private bool canActivate() {
+        
+        return true;
     }
 }
 
