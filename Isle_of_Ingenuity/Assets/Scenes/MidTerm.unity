@@ -298,6 +298,7 @@ MonoBehaviour:
   MainInventoryGroup: {fileID: 2115832975}
   playerController: {fileID: 0}
   BuildMenuGroup: {fileID: 2115832974}
+  UpgradeMenuGroup: {fileID: 1189215265}
 --- !u!114 &368832081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,7 +506,7 @@ PrefabInstance:
     - target: {fileID: 1464760522734238243, guid: d1d09171c93d01040a15492c25ab846e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b52b6b17e2e20f740a6c422edbb1e9ee, type: 3}
+      objectReference: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 2579605140442732654, guid: d1d09171c93d01040a15492c25ab846e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1810,7 +1811,7 @@ PrefabInstance:
     - target: {fileID: 1464760522734238243, guid: d1d09171c93d01040a15492c25ab846e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3aa98ece3b10ebe41b03ed1295e4cdb3, type: 3}
+      objectReference: {fileID: 21300000, guid: 1408c2d8831a8f34fb95bcc0735e0756, type: 3}
     - target: {fileID: 2579605140442732654, guid: d1d09171c93d01040a15492c25ab846e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2034,7 +2035,7 @@ PrefabInstance:
     - target: {fileID: 1464760522734238243, guid: d1d09171c93d01040a15492c25ab846e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 91239964c1965024ab1839af9b36b642, type: 3}
+      objectReference: {fileID: 21300000, guid: b52b6b17e2e20f740a6c422edbb1e9ee, type: 3}
     - target: {fileID: 2579605140442732654, guid: d1d09171c93d01040a15492c25ab846e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

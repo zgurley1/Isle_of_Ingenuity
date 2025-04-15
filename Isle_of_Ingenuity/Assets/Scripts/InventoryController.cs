@@ -6,22 +6,25 @@ public class InventoryController : MonoBehaviour
     //public GameObject TestGroup;
     public PlayerController playerController;
     public GameObject BuildMenuGroup;
-
+    public GameObject UpgradeMenuGroup;
     private bool inventoryActive = false;
     private bool buildActive = false;
+    private bool upgradeActive = false;
+
+    
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if (canActivate() && MainInventoryGroup != null) {
-                bool isMainActive = !MainInventoryGroup.activeSelf;
-                //bool isTestActive = !TestGroup.activeSelf;
-                MainInventoryGroup.SetActive(isMainActive);
-                // TestGroup.SetActive(isTestActive);
+            if (MainInventoryGroup != null) {
+                buildActive = false;
+                upgradeActive = false;
+                BuildMenuGroup.SetActive(buildActive);
+                UpgradeMenuGroup.SetActive(upgradeActive);
 
-                // Toggle inventory state
-                // playerController.ToggleInventory(isActive); // Pause camera and movement when inventory is open
+                inventoryActive = !inventoryActive;
+                MainInventoryGroup.SetActive(inventoryActive);
             }
             else
             {
@@ -31,26 +34,40 @@ public class InventoryController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            if (canActivate() && BuildMenuGroup != null)
+            if (BuildMenuGroup != null)
             {
-                    bool isMainActive = !BuildMenuGroup.activeSelf;
-                    BuildMenuGroup.SetActive(isMainActive);
-                
+                inventoryActive = false;
+                upgradeActive = false;
+                MainInventoryGroup.SetActive(inventoryActive);
+                UpgradeMenuGroup.SetActive(upgradeActive);
 
-                // Toggle inventory state
-                // playerController.ToggleInventory(isActive); // Pause camera and movement when inventory is open
+                buildActive = !buildActive;
+                BuildMenuGroup.SetActive(buildActive);
             }
             else
             {
                 Debug.LogWarning("MainInventoryGroup 'build' is not assigned in the Inspector.");
             }
         }
-    }
 
+        // Need to check for upgrade collider
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (UpgradeMenuGroup != null)
+            {
+                inventoryActive = false;
+                buildActive = false;
+                BuildMenuGroup.SetActive(buildActive);
+                MainInventoryGroup.SetActive(inventoryActive);
 
-    private bool canActivate() {
-        
-        return true;
+                upgradeActive = !upgradeActive;
+                UpgradeMenuGroup.SetActive(upgradeActive);
+            }
+            else
+            {
+                Debug.LogWarning("MainInventoryGroup 'upgrade' is not assigned in the Inspector.");
+            }
+        }
     }
 }
 
