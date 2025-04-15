@@ -15,6 +15,8 @@ public class InventoryManager : MonoBehaviour
     {
         if (instance == null) {
             instance = this;
+        } else {
+            Destroy(this);
         }
     }
 

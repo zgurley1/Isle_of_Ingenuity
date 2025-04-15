@@ -6,7 +6,9 @@ public class BuildManager : MonoBehaviour
     public GameObject BuildMenu; // Assign this in the Inspector
     public GameObject TestGroup;
     public PlayerController playerController;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
+    
     void Start()
     {
         
