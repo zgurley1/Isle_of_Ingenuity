@@ -3,7 +3,7 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     public GameObject MainInventoryGroup; // Assign this in the Inspector
-    public GameObject TestGroup;
+    //public GameObject TestGroup;
     public PlayerController playerController;
     public GameObject BuildMenuGroup;
 
@@ -15,7 +15,7 @@ public class InventoryController : MonoBehaviour
             if (MainInventoryGroup != null)
             {
                 bool isMainActive = !MainInventoryGroup.activeSelf;
-                bool isTestActive = !TestGroup.activeSelf;
+                //bool isTestActive = !TestGroup.activeSelf;
                 MainInventoryGroup.SetActive(isMainActive);
                 // TestGroup.SetActive(isTestActive);
 
@@ -24,25 +24,25 @@ public class InventoryController : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("MainInventoryGroup is not assigned in the Inspector.");
+                Debug.LogWarning("MainInventoryGroup 'inventory' is not assigned in the Inspector.");
             }
         }
 
-        // if (Input.GetKeyDown(KeyCode.B))
-        // {
-        //     if (BuildMenuGroup != null)
-        //     {
-        //         bool isMainActive = !BuildMenuGroup.activeSelf;
-        //         BuildMenuGroup.SetActive(isMainActive);
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (BuildMenuGroup != null)
+            {
+                bool isMainActive = !BuildMenuGroup.activeSelf;
+                BuildMenuGroup.SetActive(isMainActive);
 
-        //         // Toggle inventory state
-        //         // playerController.ToggleInventory(isActive); // Pause camera and movement when inventory is open
-        //     }
-        //     else
-        //     {
-        //         Debug.LogWarning("MainInventoryGroup is not assigned in the Inspector.");
-        //     }
-        // }
+                // Toggle inventory state
+                // playerController.ToggleInventory(isActive); // Pause camera and movement when inventory is open
+            }
+            else
+            {
+                Debug.LogWarning("MainInventoryGroup 'build' is not assigned in the Inspector.");
+            }
+        }
     }
 }
 

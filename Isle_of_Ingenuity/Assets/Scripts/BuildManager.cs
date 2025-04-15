@@ -8,7 +8,7 @@ public class BuildManager : MonoBehaviour
     public PlayerController playerController;
 
 
-    
+
     void Start()
     {
         
@@ -17,21 +17,21 @@ public class BuildManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            if (BuildMenu != null)
-            {
-                bool isMainActive = !BuildMenu.activeSelf;
-                BuildMenu.SetActive(isMainActive);
+        // if (Input.GetKeyDown(KeyCode.B))
+        // {
+        //     if (BuildMenu != null)
+        //     {
+        //         bool isMainActive = !BuildMenu.activeSelf;
+        //         BuildMenu.SetActive(isMainActive);
 
-                // Toggle inventory state
-                // playerController.ToggleInventory(isActive); // Pause camera and movement when inventory is open
-            }
-            else
-            {
-                Debug.LogWarning("MainInventoryGroup is not assigned in the Inspector.");
-            }
-        }
+        //         // Toggle inventory state
+        //         // playerController.ToggleInventory(isActive); // Pause camera and movement when inventory is open
+        //     }
+        //     else
+        //     {
+        //         Debug.LogWarning("MainInventoryGroup is not assigned in the Inspector.");
+        //     }
+        // }
     }
 
 }
