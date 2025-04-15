@@ -237,68 +237,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820ca5190b804be419afff1761851889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &368832077
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 368832078}
-  - component: {fileID: 368832080}
-  - component: {fileID: 368832081}
-  m_Layer: 8
-  m_Name: Interaction_manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &368832078
+--- !u!4 &368832078 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+  m_PrefabInstance: {fileID: 734208208053264066}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368832077}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1660143005}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &368832080
+--- !u!114 &368832081 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8795330413626576395, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+  m_PrefabInstance: {fileID: 734208208053264066}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368832077}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37be428b4d0536340a2881a5e0741043, type: 3}
+  m_Script: {fileID: 11500000, guid: 760a6cd5eb3062c4d95667f9e16bcb62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainInventoryGroup: {fileID: 2115832975}
-  playerController: {fileID: 0}
-  BuildMenuGroup: {fileID: 2115832974}
-  UpgradeMenuGroup: {fileID: 1189215265}
---- !u!114 &368832081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368832077}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79428d634babb134a979124f0b272f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canOpenUpgradeScreen: 0
 --- !u!114 &371607879 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6235260690894254260, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
@@ -1419,6 +1373,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4244590071293766892, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
   m_PrefabInstance: {fileID: 2115832972}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1169782797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5954596082880926028, guid: e4b72629bae630c40a8bce603386103b, type: 3}
+  m_PrefabInstance: {fileID: 555286867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1189215265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,7 +1847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7455909592540095860, guid: d1d09171c93d01040a15492c25ab846e, type: 3}
       propertyPath: m_Name
-      value: InventorySlot
+      value: UpgradeDock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1962,7 +1921,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1379958158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 368832081}
+        m_TargetAssemblyTypeName: UpgradeActions, Assembly-CSharp
+        m_MethodName: FixDock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1389458279 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8533337649125275618, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
@@ -4013,6 +3984,83 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 534248420392444161, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
   m_PrefabInstance: {fileID: 2115832972}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &734208208053264066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1660143005}
+    m_Modifications:
+    - target: {fileID: 2622434451173979220, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: BuildMenuGroup
+      value: 
+      objectReference: {fileID: 2115832974}
+    - target: {fileID: 2622434451173979220, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: UpgradeMenuGroup
+      value: 
+      objectReference: {fileID: 1189215265}
+    - target: {fileID: 2622434451173979220, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: MainInventoryGroup
+      value: 
+      objectReference: {fileID: 2115832975}
+    - target: {fileID: 4196530447992764043, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: m_Name
+      value: Interaction_manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795330413626576395, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: fixDockButton
+      value: 
+      objectReference: {fileID: 1379958159}
+    - target: {fileID: 8795330413626576395, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: brokenDockInScene
+      value: 
+      objectReference: {fileID: 1169782797}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
 --- !u!1001 &873900818938240662
 PrefabInstance:
   m_ObjectHideFlags: 0

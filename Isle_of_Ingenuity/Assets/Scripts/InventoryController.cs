@@ -15,7 +15,6 @@ public class InventoryController : MonoBehaviour
 
     void Start() {
         dockUpgradeZone = FindAnyObjectByType<DockUpgradeZone>();
-        Debug.LogWarning(dockUpgradeZone.canOpenUpgradeScreen);
     }
 
     

@@ -9,7 +9,6 @@ public class DockUpgradeZone : MonoBehaviour
         if (other.CompareTag("UpgradeStation")) // Or check for a component instead
         {
             canOpenUpgradeScreen = true;
-            Debug.LogWarning("Player entered upgrade region " + canOpenUpgradeScreen);
         }
     }
 
@@ -18,7 +17,6 @@ public class DockUpgradeZone : MonoBehaviour
         if (other.CompareTag("UpgradeStation"))
         {
             canOpenUpgradeScreen = false;
-            Debug.LogWarning("Player left upgrade region " + canOpenUpgradeScreen);
         }
     }
 }
