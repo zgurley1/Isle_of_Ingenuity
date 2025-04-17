@@ -15,6 +15,7 @@ public class InventoryController : MonoBehaviour
 
     void Start() {
         dockUpgradeZone = FindAnyObjectByType<DockUpgradeZone>();
+        CursorSwitch(false);
     }
 
     
@@ -30,6 +31,7 @@ public class InventoryController : MonoBehaviour
                 UpgradeMenuGroup.SetActive(upgradeActive);
 
                 inventoryActive = !inventoryActive;
+                CursorSwitch(inventoryActive);
                 MainInventoryGroup.SetActive(inventoryActive);
             }
             else
@@ -48,6 +50,7 @@ public class InventoryController : MonoBehaviour
                 UpgradeMenuGroup.SetActive(upgradeActive);
 
                 buildActive = !buildActive;
+                CursorSwitch(buildActive);
                 BuildMenuGroup.SetActive(buildActive);
             }
             else
@@ -66,6 +69,7 @@ public class InventoryController : MonoBehaviour
                 MainInventoryGroup.SetActive(inventoryActive);
 
                 upgradeActive = !upgradeActive;
+                CursorSwitch(upgradeActive);
                 UpgradeMenuGroup.SetActive(upgradeActive);
             }
             else
@@ -84,6 +88,18 @@ public class InventoryController : MonoBehaviour
         UpgradeMenuGroup.SetActive(upgradeActive);
         BuildMenuGroup.SetActive(buildActive);
         MainInventoryGroup.SetActive(inventoryActive);
+        CursorSwitch(false);
+    }
+
+    public void CursorSwitch(bool UIActive) {
+        if (UIActive)
+        {
+            CursorManager.Instance.EnableUICursor();
+
+        }
+        else {
+            CursorManager.Instance.EnableGameplayCursor();
+        }
     }
 }
 
