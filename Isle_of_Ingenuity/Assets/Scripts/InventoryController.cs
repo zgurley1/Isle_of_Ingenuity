@@ -74,5 +74,16 @@ public class InventoryController : MonoBehaviour
             }
         }
     }
+
+    public void CloseAll()
+    {
+        upgradeActive = false;
+        inventoryActive = false;
+        buildActive = false;
+
+        UpgradeMenuGroup.SetActive(upgradeActive);
+        BuildMenuGroup.SetActive(buildActive);
+        MainInventoryGroup.SetActive(inventoryActive);
+    }
 }
 
