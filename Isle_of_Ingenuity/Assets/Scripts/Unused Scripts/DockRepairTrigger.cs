@@ -3,6 +3,7 @@ using UnityEngine;
 public class DockRepairTrigger : MonoBehaviour
 {
     public GameObject repairMenu;  // Reference to the repair menu UI
+    public GameObject repairText;
     private bool playerInRange = false;
 
     void Update() {
@@ -15,7 +16,7 @@ public class DockRepairTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
             playerInRange = true;
-            Debug.Log("Press E to repair the dock.");
+            repairText.SetActive(true);
         }
     }
 
@@ -23,6 +24,7 @@ public class DockRepairTrigger : MonoBehaviour
         if (other.CompareTag("Player")) {
             playerInRange = false;
             repairMenu.SetActive(false);  // Hide the repair menu when the player leaves
+            repairText.SetActive(false);
         }
     }
 }

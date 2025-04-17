@@ -7,6 +7,8 @@ public class InventoryController : MonoBehaviour
     public PlayerController playerController;
     public GameObject BuildMenuGroup;
     public GameObject UpgradeMenuGroup;
+
+    public GameObject UpgradeText;
     private bool inventoryActive = false;
     private bool buildActive = false;
     private bool upgradeActive = false;
@@ -22,6 +24,11 @@ public class InventoryController : MonoBehaviour
 
     void Update()
     {
+        inventoryActive = MainInventoryGroup.activeSelf;
+        buildActive = BuildMenuGroup.activeSelf;
+        upgradeActive = UpgradeMenuGroup.activeSelf;
+
+
         if (Input.GetKeyDown(KeyCode.I))
         {
             if (MainInventoryGroup != null) {
@@ -63,14 +70,7 @@ public class InventoryController : MonoBehaviour
         {
             if (UpgradeMenuGroup != null)
             {
-                inventoryActive = false;
-                buildActive = false;
-                BuildMenuGroup.SetActive(buildActive);
-                MainInventoryGroup.SetActive(inventoryActive);
-
-                upgradeActive = !upgradeActive;
-                CursorSwitch(upgradeActive);
-                UpgradeMenuGroup.SetActive(upgradeActive);
+                SwitchUpgradeUI();
             }
             else
             {
@@ -89,6 +89,19 @@ public class InventoryController : MonoBehaviour
         BuildMenuGroup.SetActive(buildActive);
         MainInventoryGroup.SetActive(inventoryActive);
         CursorSwitch(false);
+    }
+
+    public void SwitchUpgradeUI()
+    {
+        inventoryActive = false;
+        buildActive = false;
+        BuildMenuGroup.SetActive(buildActive);
+        MainInventoryGroup.SetActive(inventoryActive);
+
+        upgradeActive = !upgradeActive;
+        CursorSwitch(upgradeActive);
+        UpgradeText.SetActive(!upgradeActive);
+        UpgradeMenuGroup.SetActive(upgradeActive);
     }
 
     public void CursorSwitch(bool UIActive) {

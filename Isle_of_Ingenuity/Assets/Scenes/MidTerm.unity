@@ -157,6 +157,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820ca5190b804be419afff1761851889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &171498852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 171498854}
+  - component: {fileID: 171498853}
+  m_Layer: 0
+  m_Name: UpgradeCollider
+  m_TagString: UpgradeStation
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &171498853
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171498852}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 6.15
+  m_Height: 5.02
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &171498854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171498852}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 464.84, y: 4.77, z: 362.71}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &231561322 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6785030143263428190, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
@@ -349,10 +404,6 @@ PrefabInstance:
     - target: {fileID: 5954596082880926028, guid: e4b72629bae630c40a8bce603386103b, type: 3}
       propertyPath: m_Name
       value: BoatDock-Damaged
-      objectReference: {fileID: 0}
-    - target: {fileID: 8804276755300386746, guid: e4b72629bae630c40a8bce603386103b, type: 3}
-      propertyPath: m_TagString
-      value: UpgradeStation
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1340,6 +1391,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3620098201178672556, guid: 58cd8dc8c2359174baa15aa31e302c8b, type: 3}
   m_PrefabInstance: {fileID: 963729410}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &994702770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994702771}
+  - component: {fileID: 994702773}
+  - component: {fileID: 994702772}
+  m_Layer: 5
+  m_Name: UpgradeText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &994702771
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994702770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1133493281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 37.5}
+  m_SizeDelta: {x: 160.3, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &994702772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994702770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 13
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Press E for Upgrade
+--- !u!222 &994702773
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994702770}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1003212324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2613,6 +2743,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canOpenUpgradeScreen: 0
+  UpgradeMenu: {fileID: 1189215265}
+  repairText: {fileID: 994702770}
 --- !u!114 &1671321610 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7045371029899392511, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
@@ -4181,6 +4313,9 @@ PrefabInstance:
       addedObject: {fileID: 1189215266}
     - targetCorrespondingSourceObject: {fileID: 4244590071293766892, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 994702771}
+    - targetCorrespondingSourceObject: {fileID: 4244590071293766892, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1030033516}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
@@ -4202,6 +4337,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1660143005}
     m_Modifications:
+    - target: {fileID: 2622434451173979220, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: UpgradeText
+      value: 
+      objectReference: {fileID: 994702770}
     - target: {fileID: 2622434451173979220, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
       propertyPath: BuildMenuGroup
       value: 
@@ -4649,3 +4788,4 @@ SceneRoots:
   - {fileID: 7063102019248178211}
   - {fileID: 399400353}
   - {fileID: 610232274}
+  - {fileID: 171498854}
