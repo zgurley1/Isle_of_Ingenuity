@@ -12,6 +12,10 @@ public class InventoryController : MonoBehaviour
     public GameObject UpgradeMenuGroup;
     public GameObject ProcessMenuGroup;
 
+    [Header("Buttons")]
+    public GameObject woodProcessButton;
+    public GameObject stoneProcessButton;
+
     [Header("OTHER")]
     public GameObject UpgradeText;
 
