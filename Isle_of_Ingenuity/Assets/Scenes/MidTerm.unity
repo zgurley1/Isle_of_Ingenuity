@@ -157,64 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820ca5190b804be419afff1761851889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &205553614
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 205553617}
-  - component: {fileID: 205553616}
-  - component: {fileID: 205553615}
-  m_Layer: 0
-  m_Name: BoatDockManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &205553615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205553614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 412f092157db0424682663b2a553824d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repairMenu: {fileID: 0}
---- !u!114 &205553616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205553614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55225d42b9fe0ff439978bc9ee4ffac9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &205553617
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205553614}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 473.45544, y: 2.789997, z: 357.07703}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &231561322 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6785030143263428190, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
@@ -286,6 +228,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820ca5190b804be419afff1761851889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &399400352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 399400353}
+  m_Layer: 0
+  m_Name: FinalBoatPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &399400353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399400352}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.9772126, z: -0, w: -0.21226282}
+  m_LocalPosition: {x: 487.96, y: 11.09, z: 350.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 204.51, z: 0}
 --- !u!1 &449537118 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
@@ -2034,7 +2007,7 @@ PrefabInstance:
     - target: {fileID: 1464760522734238243, guid: d1d09171c93d01040a15492c25ab846e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b52b6b17e2e20f740a6c422edbb1e9ee, type: 3}
+      objectReference: {fileID: 21300000, guid: 91239964c1965024ab1839af9b36b642, type: 3}
     - target: {fileID: 2579605140442732654, guid: d1d09171c93d01040a15492c25ab846e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2117,7 +2090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7455909592540095860, guid: d1d09171c93d01040a15492c25ab846e, type: 3}
       propertyPath: m_Name
-      value: InventorySlot (1)
+      value: BuildBoat
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2191,7 +2164,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1535776196}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 706067304}
+        m_TargetAssemblyTypeName: InventoryController, Assembly-CSharp
+        m_MethodName: CloseAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 368832081}
+        m_TargetAssemblyTypeName: UpgradeActions, Assembly-CSharp
+        m_MethodName: BuildBoat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1535859695 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2149270221166609385, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
@@ -4139,9 +4136,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8795330413626576395, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: boat
+      value: 
+      objectReference: {fileID: 5238067764778158439, guid: de7dc9551791b9540a64d0fdaace5b0b, type: 3}
+    - target: {fileID: 8795330413626576395, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: boatPosition
+      value: 
+      objectReference: {fileID: 399400352}
+    - target: {fileID: 8795330413626576395, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
       propertyPath: fixDockButton
       value: 
       objectReference: {fileID: 1379958159}
+    - target: {fileID: 8795330413626576395, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: buildBoatButton
+      value: 
+      objectReference: {fileID: 1535776197}
     - target: {fileID: 8795330413626576395, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
       propertyPath: brokenDockInScene
       value: 
@@ -4514,5 +4523,5 @@ SceneRoots:
   - {fileID: 873900818938240662}
   - {fileID: 451334855}
   - {fileID: 555286867}
-  - {fileID: 205553617}
   - {fileID: 7063102019248178211}
+  - {fileID: 399400353}
