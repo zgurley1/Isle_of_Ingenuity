@@ -3271,6 +3271,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e71aeeb21af97747aa7f71adc015b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodSlots: 
+  stoneSlots: 
+  wood: {fileID: 11400000, guid: fea95de606198be47813e41a332514fa, type: 2}
+  stone: {fileID: 11400000, guid: 38fd46524fead294b99deb7869c048fc, type: 2}
 --- !u!114 &1671321610 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7045371029899392511, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
