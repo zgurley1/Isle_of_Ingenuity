@@ -2,16 +2,25 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
+    //public PlayerController playerController;
+    [Header("UI Elements")]
+    
     public GameObject MainInventoryGroup; // Assign this in the Inspector
     //public GameObject TestGroup;
-    public PlayerController playerController;
+    
     public GameObject BuildMenuGroup;
     public GameObject UpgradeMenuGroup;
+    public GameObject ProcessMenuGroup;
 
+    [Header("OTHER")]
     public GameObject UpgradeText;
+
     private bool inventoryActive = false;
     private bool buildActive = false;
     private bool upgradeActive = false;
+    private bool processActive = false;
+
+    public bool UIActive = false;
 
     private DockUpgradeZone dockUpgradeZone;
 
@@ -28,12 +37,21 @@ public class InventoryController : MonoBehaviour
         buildActive = BuildMenuGroup.activeSelf;
         upgradeActive = UpgradeMenuGroup.activeSelf;
 
+        if (inventoryActive || buildActive || upgradeActive || processActive) {
+            UIActive = true;
+        } else {
+            UIActive = false;
+        }
+            
+
 
         if (Input.GetKeyDown(KeyCode.I))
         {
             if (MainInventoryGroup != null) {
                 buildActive = false;
                 upgradeActive = false;
+                processActive = false;
+                ProcessMenuGroup.SetActive(processActive);
                 BuildMenuGroup.SetActive(buildActive);
                 UpgradeMenuGroup.SetActive(upgradeActive);
 
@@ -53,6 +71,8 @@ public class InventoryController : MonoBehaviour
             {
                 inventoryActive = false;
                 upgradeActive = false;
+                processActive = false;
+                ProcessMenuGroup.SetActive(processActive);
                 MainInventoryGroup.SetActive(inventoryActive);
                 UpgradeMenuGroup.SetActive(upgradeActive);
 
@@ -84,7 +104,10 @@ public class InventoryController : MonoBehaviour
         upgradeActive = false;
         inventoryActive = false;
         buildActive = false;
+        processActive = false;
 
+
+        ProcessMenuGroup.SetActive(processActive);
         UpgradeMenuGroup.SetActive(upgradeActive);
         BuildMenuGroup.SetActive(buildActive);
         MainInventoryGroup.SetActive(inventoryActive);
@@ -95,6 +118,8 @@ public class InventoryController : MonoBehaviour
     {
         inventoryActive = false;
         buildActive = false;
+        processActive = false;
+        ProcessMenuGroup.SetActive(processActive);
         BuildMenuGroup.SetActive(buildActive);
         MainInventoryGroup.SetActive(inventoryActive);
 
@@ -102,6 +127,13 @@ public class InventoryController : MonoBehaviour
         CursorSwitch(upgradeActive);
         UpgradeText.SetActive(!upgradeActive);
         UpgradeMenuGroup.SetActive(upgradeActive);
+    }
+
+    public void OpenProcessUI() {
+        CloseAll();
+        processActive = true;
+        ProcessMenuGroup.SetActive(processActive);
+        CursorSwitch(processActive);
     }
 
     public void CursorSwitch(bool UIActive) {
