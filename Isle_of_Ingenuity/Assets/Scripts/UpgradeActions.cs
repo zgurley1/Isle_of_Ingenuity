@@ -12,6 +12,9 @@ public class UpgradeActions : MonoBehaviour
 
     public Button buildBoatButton;
 
+
+
+
     public void FixDock()
     {
         if (brokenDockInScene != null && fixedDockPrefab != null)
@@ -23,9 +26,15 @@ public class UpgradeActions : MonoBehaviour
             Destroy(brokenDockInScene);
             Instantiate(fixedDockPrefab, dockPositionOffset, dockRotation);
 
+            
+
             if (fixDockButton != null)
             {
                 fixDockButton.interactable = false;
+            }
+            if (buildBoatButton != null)
+            {
+                buildBoatButton.interactable= true;
             }
 
             Debug.Log("Dock repaired!");
