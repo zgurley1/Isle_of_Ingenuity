@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
@@ -106,6 +107,30 @@ public class InventoryManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    public List<int> GetEmptySlots() {
+        List<int> emptySlot = new List<int>();
+
+        for (int i = 0; i < inventorySlots.Length; i++) {
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            if (itemInSlot == null) {
+                emptySlot.Add(i);
+            }
+        }
+        return emptySlot;
+    }
+
+    public int GetFirstEmptySlot() {
+        for (int i = 0; i < inventorySlots.Length; i++) {
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            if (itemInSlot == null) {
+                return i;
+            }
+        }
+        return -1;
     }
 
 

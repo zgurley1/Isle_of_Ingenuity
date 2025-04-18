@@ -69,5 +69,31 @@ public class ResourceProcess : MonoBehaviour
         }
     }
 
+    public int GetMatNum(List<int> material) {
+        int numMat = 0;
+
+        
+        for (int i = 0; i < material.Count; i++) {
+            InventorySlot slot = InventoryManager.inventorySlots[woodSlots[i]];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            int MatInSlot = itemInSlot.count;
+
+            numMat += MatInSlot;
+        }
+
+        Debug.Log("Num Mat in inv: " + numMat);
+        return numMat;
+    }
+
+    
+
+    public void ProcessWood() {
+        int firstEmpty = InventoryManager.GetFirstEmptySlot();
+
+        
+        
+
+    }
+
 
 }
