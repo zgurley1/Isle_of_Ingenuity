@@ -1284,6 +1284,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4839797935267529201, guid: e531cc7d62922d9408a2bbb38a49aa8a, type: 3}
+      propertyPath: maxStackedItems
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4839797935267529201, guid: e531cc7d62922d9408a2bbb38a49aa8a, type: 3}
       propertyPath: inventorySlots.Array.size
       value: 32
       objectReference: {fileID: 0}
@@ -3273,8 +3277,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   woodSlots: 
   stoneSlots: 
+  woodNum: 
+  stoneNum: 
   wood: {fileID: 11400000, guid: fea95de606198be47813e41a332514fa, type: 2}
   stone: {fileID: 11400000, guid: 38fd46524fead294b99deb7869c048fc, type: 2}
+  plank: {fileID: 11400000, guid: 492bf2106d375b244961335f41f4c5e2, type: 2}
+  brick: {fileID: 11400000, guid: 10a2a50e4eafeba4c8993edf02c8ec72, type: 2}
 --- !u!114 &1671321610 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7045371029899392511, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}

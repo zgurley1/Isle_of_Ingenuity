@@ -59,6 +59,7 @@ public class InventoryManager : MonoBehaviour
     }
     public bool AddItem(Item item) {
 
+        // Check the inventory for an available stack of the item
         for (int i = 0; i < inventorySlots.Length; i++) {
             InventorySlot slot = inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
@@ -69,15 +70,27 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < inventorySlots.Length; i++) {
-            InventorySlot slot = inventorySlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot == null) {
-                SpawnNewItem(item, slot);
-                return true;
-            }
+
+        // Fill the first avaliable slot
+        int first = GetFirstEmptySlot();
+        if (first != -1) {
+            SpawnNewItem(item, inventorySlots[first]);
+            return true;
+        } else {
+            return false;
         }
-        return false;
+    }
+
+
+    public void RemoveItem(int index) {
+        
+        InventoryItem itemInSlot = inventorySlots[index].GetComponentInChildren<InventoryItem>();
+        itemInSlot.count--;
+        if (itemInSlot.count == 0) {
+            Destroy(itemInSlot.gameObject);
+            return;
+        }
+        itemInSlot.RefereshCount();
     }
 
     void SpawnNewItem(Item item, InventorySlot slot) {
