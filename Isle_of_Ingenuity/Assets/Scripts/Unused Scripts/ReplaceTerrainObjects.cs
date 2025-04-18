@@ -40,7 +40,24 @@ public class ReplaceTerrainObjects : MonoBehaviour
 
             // Instantiate the prefab
             GameObject newObject = Instantiate(prefab, worldPos, Quaternion.identity);
-            newObject.transform.localScale = Vector3.one * tree.widthScale;
+            // Choose scale range based on prefab name
+            float minScale = 15.0f;
+            float maxScale = 20.0f;
+
+            string prefabName = prefab.name.ToLower();
+            // if (prefabName.Contains("rock"))
+            // {
+            //     minScale = 5.0f;
+            //     maxScale = 15.0f;
+            // }
+            // else if (prefabName.Contains("tree"))
+            // {
+            //     minScale = 1.5f;
+            //     maxScale = 4.0f;
+            // }
+
+            float randomScale = Random.Range(minScale, maxScale);
+            newObject.transform.localScale = Vector3.one * randomScale;
 
             // Ensure it has a collider
             if (newObject.GetComponent<Collider>() == null)

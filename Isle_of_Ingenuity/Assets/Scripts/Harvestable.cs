@@ -1,5 +1,31 @@
 using UnityEngine;
 
+
+public class TreeEntity : MonoBehaviour
+{
+    public Vector3 position;
+    public int prefabIndex;
+    private TreeSpawner spawner;
+
+    public void Initialize(Vector3 pos, int index, TreeSpawner treeSpawner)
+    {
+        position = pos;
+        prefabIndex = index;
+        spawner = treeSpawner;
+    }
+
+    private void OnDestroy()
+    {
+        if (spawner != null)
+        {
+            spawner.RemoveTree(position, prefabIndex);
+        }
+    }
+}
+
+
+
+
 public class Harvestable : MonoBehaviour
 {
     public int maxHealth = 3;

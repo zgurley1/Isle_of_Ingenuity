@@ -1,77 +1,108 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
+public class TreeData
+{
+    public Vector3 position;
+    public int prefabIndex;
+}
+
+
+public static class JsonHelper
+{
+    public static T[] FromJson<T>(string json)
+    {
+        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
+        return wrapper.Items;
+    }
+
+    public static string ToJson<T>(T[] array, bool prettyPrint = false)
+    {
+        Wrapper<T> wrapper = new Wrapper<T> { Items = array };
+        return JsonUtility.ToJson(wrapper, prettyPrint);
+    }
+
+    [System.Serializable]
+    private class Wrapper<T>
+    {
+        public T[] Items;
+    }
+}
+
 public class TreeSpawner : MonoBehaviour
 {
-    public Terrain terrain; // Assign the terrain
-    public GameObject[] treePrefabs; // Assign tree prefabs
-    public int maxTrees = 100; // Maximum trees allowed
-    private List<Vector3> savedTreePositions = new List<Vector3>();
+    public Terrain terrain;
+    public GameObject[] treePrefabs;
+    public int maxTrees = 100;
+
+    private List<TreeData> savedTrees = new List<TreeData>();
 
     void Start()
     {
-        LoadTreePositions();
+        LoadTreeData();
         EnsureMaxTreeCount();
-        SpawnSavedTrees();
+        SpawnTrees();
     }
 
-    void LoadTreePositions()
+    void LoadTreeData()
     {
-        savedTreePositions.Clear();
+        savedTrees.Clear();
+        string json = PlayerPrefs.GetString("TreeData", "");
 
-        for (int i = 0; i < maxTrees; i++)
+        if (!string.IsNullOrEmpty(json))
         {
-            float x = PlayerPrefs.GetFloat($"TreeX_{i}", float.MinValue);
-            float z = PlayerPrefs.GetFloat($"TreeZ_{i}", float.MinValue);
-
-            if (x != float.MinValue && z != float.MinValue)
-            {
-                float y = terrain.SampleHeight(new Vector3(x, 0, z)) + terrain.transform.position.y;
-                savedTreePositions.Add(new Vector3(x, y, z));
-            }
+            TreeData[] loadedTrees = JsonHelper.FromJson<TreeData>(json);
+            savedTrees.AddRange(loadedTrees);
         }
     }
 
-    void SaveTreePositions()
+    void SaveTreeData()
     {
-        for (int i = 0; i < savedTreePositions.Count; i++)
-        {
-            PlayerPrefs.SetFloat($"TreeX_{i}", savedTreePositions[i].x);
-            PlayerPrefs.SetFloat($"TreeZ_{i}", savedTreePositions[i].z);
-        }
+        TreeData[] array = savedTrees.ToArray();
+        string json = JsonHelper.ToJson(array, true);
+        PlayerPrefs.SetString("TreeData", json);
         PlayerPrefs.Save();
     }
 
     void EnsureMaxTreeCount()
     {
-        while (savedTreePositions.Count > maxTrees)
+        while (savedTrees.Count > maxTrees)
         {
-            savedTreePositions.RemoveAt(savedTreePositions.Count - 1);
+            savedTrees.RemoveAt(savedTrees.Count - 1);
         }
 
-        while (savedTreePositions.Count < maxTrees)
+        while (savedTrees.Count < maxTrees)
         {
-            Vector3 newTreePos = GetValidSpawnPosition();
-            if (newTreePos != Vector3.zero) savedTreePositions.Add(newTreePos);
+            Vector3? newTreePos = GetValidSpawnPosition();
+            if (newTreePos.HasValue)
+            {
+                int prefabIndex = Random.Range(0, treePrefabs.Length);
+                savedTrees.Add(new TreeData { position = newTreePos.Value, prefabIndex = prefabIndex });
+            }
         }
 
-        SaveTreePositions();
+        SaveTreeData();
     }
 
-    void SpawnSavedTrees()
+    void SpawnTrees()
     {
-        foreach (Vector3 position in savedTreePositions)
+        foreach (TreeData tree in savedTrees)
         {
-            GameObject treePrefab = treePrefabs[Random.Range(0, treePrefabs.Length)];
-            GameObject newTree = Instantiate(treePrefab, position, Quaternion.identity);
+            GameObject prefab = treePrefabs[tree.prefabIndex];
+            GameObject newTree = Instantiate(prefab, tree.position, Quaternion.identity);
             newTree.transform.localScale = Vector3.one * Random.Range(0.8f, 1.2f);
+
+            // Add TreeInstance script and initialize
+            TreeEntity instance = newTree.AddComponent<TreeEntity>();
+            instance.Initialize(tree.position, tree.prefabIndex, this);
 
             if (newTree.GetComponent<Collider>() == null)
                 newTree.AddComponent<CapsuleCollider>();
         }
     }
 
-    Vector3 GetValidSpawnPosition()
+    Vector3? GetValidSpawnPosition()
     {
         TerrainData terrainData = terrain.terrainData;
         int maxAttempts = 100;
@@ -84,12 +115,11 @@ public class TreeSpawner : MonoBehaviour
 
             Vector3 worldPos = new Vector3(randomX + terrain.transform.position.x, terrainY, randomZ + terrain.transform.position.z);
 
-            // Check texture at the spawn location
             if (IsGrassArea(worldPos))
                 return worldPos;
         }
 
-        return Vector3.zero; // Return zero if no valid position was found
+        return null;
     }
 
     bool IsGrassArea(Vector3 worldPos)
@@ -100,8 +130,21 @@ public class TreeSpawner : MonoBehaviour
         int mapZ = Mathf.FloorToInt((terrainPos.z / terrainData.size.z) * terrainData.alphamapHeight);
 
         float[,,] alphaMaps = terrainData.GetAlphamaps(mapX, mapZ, 1, 1);
-        int grassTextureIndex = 0; // Change if grass texture is not at index 0
+        int grassTextureIndex = 0;
 
         return alphaMaps[0, 0, grassTextureIndex] > 0.5f;
+    }
+
+    public void RemoveTree(Vector3 position, int prefabIndex)
+    {
+        for (int i = 0; i < savedTrees.Count; i++)
+        {
+            if (Vector3.Distance(savedTrees[i].position, position) < 0.1f && savedTrees[i].prefabIndex == prefabIndex)
+            {
+                savedTrees.RemoveAt(i);
+                SaveTreeData();
+                break;
+            }
+        }
     }
 }
