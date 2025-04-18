@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ResourceProcess : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class ResourceProcess : MonoBehaviour
     private bool seek = true;
     private InventoryController InventoryController;
 
+    [Header("Process Buttons")]
+    public Button stoneProcessButton;
+    public Button woodProcessButton;
+    
+    [Header("Inventory List")]
     public List<int> woodSlots = new List<int>();
     public List<int> stoneSlots = new List<int>();
 
@@ -51,6 +57,7 @@ public class ResourceProcess : MonoBehaviour
                     Debug.Log("Wood slots length" + woodSlots.Count);
                     Debug.Log("Stone slots length" + stoneSlots.Count);
 
+                    UpdateButtons();
                 }
             }
         }
@@ -74,6 +81,20 @@ public class ResourceProcess : MonoBehaviour
                 stoneSlots.Add(i);
                 stoneNum.Add(itemInSlot.count);
             }
+        }
+    }
+
+    private void UpdateButtons() {
+        if (stoneSlots.Count > 0) {
+            stoneProcessButton.interactable = true;
+        } else {
+            stoneProcessButton.interactable = false;
+        }
+
+        if (woodSlots.Count > 0) {
+            woodProcessButton.interactable = true;
+        } else {
+            woodProcessButton.interactable = false;
         }
     }
 
@@ -104,10 +125,6 @@ public class ResourceProcess : MonoBehaviour
     
 
     public void ProcessWood() {
-        //int firstEmpty = InventoryManager.GetFirstEmptySlot();
-
-        //int numWood = GetMatNum(woodSlots);
-
         int inventoryIndex = GetFirstIndex(woodNum);
 
         if (inventoryIndex != -1) {
@@ -118,22 +135,19 @@ public class ResourceProcess : MonoBehaviour
                 woodNum[inventoryIndex] -= 1;
             }
         }
+    }
 
-        // if (numWood > 0) {
-        //     bool added = InventoryManager.AddItem(plank);
+    public void ProcessStone() {
+        int inventoryIndex = GetFirstIndex(stoneNum);
 
-        //     if (added) {
-        //         InventoryManager.RemoveItem(woodSlots[0]);
-        //     } else {
-        //         // Don't remove
-        //         // Potentially deactivate buttons so it doesn't try to add more
-        //     }
+        if (inventoryIndex != -1) {
+            bool added = InventoryManager.AddItem(brick);
 
-        // }
-        
-        
-        
-
+            if (added) {
+                InventoryManager.RemoveItem(stoneSlots[inventoryIndex]);
+                stoneNum[inventoryIndex] -= 1;
+            }
+        }
     }
 
 
