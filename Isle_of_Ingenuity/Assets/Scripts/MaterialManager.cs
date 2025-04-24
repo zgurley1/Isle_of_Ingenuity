@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
-public class MaterialManager : MonoBehaviour
+public class MaterialManager: MonoBehaviour
 {
     [Header("Materials")]
     [SerializeField] private Item wood;
@@ -19,10 +19,17 @@ public class MaterialManager : MonoBehaviour
 
     public InventoryManager InventoryManager;
 
+    public static MaterialManager Instance;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         InventoryManager = FindAnyObjectByType<InventoryManager>();
+        if (Instance == null) {
+            Instance = this;
+        } else {
+            Destroy(Instance);
+        }
     }
 
     public Tuple<int,int> getBaseMatNum() {
