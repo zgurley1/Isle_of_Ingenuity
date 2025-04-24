@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 
 public class InventoryController : MonoBehaviour
 {
@@ -13,8 +15,9 @@ public class InventoryController : MonoBehaviour
     public GameObject ProcessMenuGroup;
 
     [Header("Buttons")]
-    public GameObject woodProcessButton;
-    public GameObject stoneProcessButton;
+    public Button woodProcessButton;
+    public Button stoneProcessButton;
+    public Button buildHouseButton;
 
     [Header("OTHER")]
     public GameObject UpgradeText;
@@ -27,9 +30,11 @@ public class InventoryController : MonoBehaviour
     public bool UIActive = false;
 
     private DockUpgradeZone dockUpgradeZone;
+    private MaterialManager MaterialManager;
 
     void Start() {
         dockUpgradeZone = FindAnyObjectByType<DockUpgradeZone>();
+        MaterialManager = FindAnyObjectByType<MaterialManager>();
         CursorSwitch(false);
     }
 
@@ -82,6 +87,7 @@ public class InventoryController : MonoBehaviour
 
                 buildActive = !buildActive;
                 CursorSwitch(buildActive);
+                UpdateButtons();
                 BuildMenuGroup.SetActive(buildActive);
             }
             else
@@ -103,6 +109,15 @@ public class InventoryController : MonoBehaviour
         }
     }
 
+    void UpdateButtons() {
+        var matNum = MaterialManager.getBaseMatNum();
+        int numWood = matNum.Item1;
+        int numStone = matNum.Item2;
+
+        Debug.Log("Wood num: " + numWood);
+        Debug.Log("Stone num: " + numStone);
+    }
+    
     public void CloseAll()
     {
         upgradeActive = false;

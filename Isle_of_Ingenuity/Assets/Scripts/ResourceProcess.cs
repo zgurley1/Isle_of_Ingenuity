@@ -15,13 +15,14 @@ public class ResourceProcess : MonoBehaviour
     public Button woodProcessButton;
     
     [Header("Inventory List")]
-    public List<int> woodSlots = new List<int>();
-    public List<int> stoneSlots = new List<int>();
+    // public List<int> woodSlots = new List<int>();
+    // public List<int> stoneSlots = new List<int>();
 
-    public List<int> woodNum = new List<int>();
-    public List<int> stoneNum = new List<int>();
+    // public List<int> woodNum = new List<int>();
+    // public List<int> stoneNum = new List<int>();
 
-    private InventoryManager InventoryManager;
+    private MaterialManager MaterialManager;
+
 
     [SerializeField] private Item wood;
     [SerializeField] private Item stone;
@@ -30,7 +31,7 @@ public class ResourceProcess : MonoBehaviour
     void Start()
     {
         InventoryController = FindAnyObjectByType<InventoryController>();
-        InventoryManager = FindAnyObjectByType<InventoryManager>();
+        MaterialManager = FindAnyObjectByType<MaterialManager>();
     }
 
     // Update is called once per frame
@@ -51,11 +52,11 @@ public class ResourceProcess : MonoBehaviour
                 if (Input.GetMouseButtonDown(0)) // Left-click
                 {
                     InventoryController.OpenProcessUI();
-                    ClearList();
-                    FillList();
+                    MaterialManager.ClearList();
+                    MaterialManager.FillList();
 
-                    Debug.Log("Wood slots length" + woodSlots.Count);
-                    Debug.Log("Stone slots length" + stoneSlots.Count);
+                    Debug.Log("Wood slots length" + MaterialManager.woodSlots.Count);
+                    Debug.Log("Stone slots length" + MaterialManager.stoneSlots.Count);
 
                     UpdateButtons();
                 }
@@ -63,89 +64,58 @@ public class ResourceProcess : MonoBehaviour
         }
     }
 
-    void ClearList() {
-        woodSlots.Clear();
-        stoneSlots.Clear();
-        woodNum.Clear();
-        stoneNum.Clear();
-    }
-    void FillList() {
-        for (int i = 0; i < InventoryManager.inventorySlots.Length; i++) {
-            InventorySlot slot = InventoryManager.inventorySlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot != null && itemInSlot.item == wood) {
-                woodSlots.Add(i);
-                woodNum.Add(itemInSlot.count);
-                
-            } else if (itemInSlot != null && itemInSlot.item == stone) {
-                stoneSlots.Add(i);
-                stoneNum.Add(itemInSlot.count);
-            }
-        }
-    }
+    // void ClearList() {
+    //     woodSlots.Clear();
+    //     stoneSlots.Clear();
+    //     woodNum.Clear();
+    //     stoneNum.Clear();
+    // }
+    // void FillList() {
+    //     var list = MaterialManager.fillList();
+
+    //     woodSlots = list.Item1;
+    //     woodNum = list.Item2;
+    //     stoneSlots = list.Item3;
+    //     stoneNume = list.Item4;
+    // }
 
     private void UpdateButtons() {
-        if (stoneSlots.Count > 0) {
+        if (MaterialManager.stoneSlots.Count > 0) {
             stoneProcessButton.interactable = true;
         } else {
             stoneProcessButton.interactable = false;
         }
 
-        if (woodSlots.Count > 0) {
+        if (MaterialManager.woodSlots.Count > 0) {
             woodProcessButton.interactable = true;
         } else {
             woodProcessButton.interactable = false;
         }
     }
-
-    public int GetMatNum(List<int> material) {
-        int numMat = 0;
-
-        
-        for (int i = 0; i < material.Count; i++) {
-            InventorySlot slot = InventoryManager.inventorySlots[woodSlots[i]];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            int MatInSlot = itemInSlot.count;
-
-            numMat += MatInSlot;
-        }
-
-        Debug.Log("Num Mat in inv: " + numMat);
-        return numMat;
-    }
-
-    private int GetFirstIndex(List<int> material) {
-        for (int i = 0; i < material.Count; i++) {
-            if (material[i] > 0) {
-                return i;
-            }
-        }
-        return -1;
-    }
     
 
     public void ProcessWood() {
-        int inventoryIndex = GetFirstIndex(woodNum);
+        int inventoryIndex = MaterialManager.GetFirstIndex(MaterialManager.woodNum);
 
         if (inventoryIndex != -1) {
-            bool added = InventoryManager.AddItem(plank);
+            bool added = MaterialManager.InventoryManager.AddItem(plank);
 
             if (added) {
-                InventoryManager.RemoveItem(woodSlots[inventoryIndex]);
-                woodNum[inventoryIndex] -= 1;
+                MaterialManager.InventoryManager.RemoveItem(MaterialManager.woodSlots[inventoryIndex]);
+                MaterialManager.woodNum[inventoryIndex] -= 1;
             }
         }
     }
 
     public void ProcessStone() {
-        int inventoryIndex = GetFirstIndex(stoneNum);
+        int inventoryIndex = MaterialManager.GetFirstIndex(MaterialManager.stoneNum);
 
         if (inventoryIndex != -1) {
-            bool added = InventoryManager.AddItem(brick);
+            bool added = MaterialManager.InventoryManager.AddItem(brick);
 
             if (added) {
-                InventoryManager.RemoveItem(stoneSlots[inventoryIndex]);
-                stoneNum[inventoryIndex] -= 1;
+                MaterialManager.InventoryManager.RemoveItem(MaterialManager.stoneSlots[inventoryIndex]);
+                MaterialManager.stoneNum[inventoryIndex] -= 1;
             }
         }
     }
