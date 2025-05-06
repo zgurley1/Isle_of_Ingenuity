@@ -6,12 +6,14 @@ public class TreeEntity : MonoBehaviour
     public Vector3 position;
     public int prefabIndex;
     private TreeSpawner spawner;
+    public static int maxHealth;
 
-    public void Initialize(Vector3 pos, int index, TreeSpawner treeSpawner)
+    public void Initialize(Vector3 pos, int index, int health, TreeSpawner treeSpawner)
     {
         position = pos;
         prefabIndex = index;
         spawner = treeSpawner;
+        maxHealth = health;
     }
 
     private void OnDestroy()
@@ -45,6 +47,7 @@ public class Harvestable : MonoBehaviour
     }
 
     void Start() {
+        maxHealth = TreeEntity.maxHealth;
         currentHealth = maxHealth;
     }
 

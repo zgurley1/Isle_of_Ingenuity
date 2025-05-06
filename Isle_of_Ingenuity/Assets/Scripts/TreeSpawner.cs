@@ -36,7 +36,13 @@ public class TreeSpawner : MonoBehaviour
     public GameObject[] treePrefabs;
     public int maxTrees = 100;
 
+    public AnimationCurve scaleDistribution;
+
     private List<TreeData> savedTrees = new List<TreeData>();
+    private float minTreeScale = 1f;
+    private float maxTreeScale = 5f;
+    private float minRockScale = 5f;
+    private float maxRockScale = 12;
 
     void Start()
     {
@@ -91,11 +97,30 @@ public class TreeSpawner : MonoBehaviour
         {
             GameObject prefab = treePrefabs[tree.prefabIndex];
             GameObject newTree = Instantiate(prefab, tree.position, Quaternion.identity);
-            newTree.transform.localScale = Vector3.one * Random.Range(0.8f, 1.2f);
+            
+            // Scale Tree objects
+            // if (tree.prefabIndex == 2) {
+            //     newTree.transform.localScale += new Vector3(10, 10, 10);
+            // }
+            if (tree.prefabIndex == 2) {
+                //newTree.transform.localScale = Vector3.one * Random.Range(minRockScale, maxRockScale);
+                float biasedRandom = scaleDistribution.Evaluate(Random.value);
+                float scale = Mathf.Lerp(minRockScale, maxRockScale, biasedRandom);
+                newTree.transform.localScale = Vector3.one * scale;
 
+
+                newTree.transform.Translate(0,-1,0);
+            }
+            else {
+                float biasedRandom = scaleDistribution.Evaluate(Random.value);
+                float scale = Mathf.Lerp(minTreeScale, maxTreeScale, biasedRandom);
+                newTree.transform.localScale = Vector3.one * scale;
+            }
+            
+            
             // Add TreeInstance script and initialize
             TreeEntity instance = newTree.AddComponent<TreeEntity>();
-            instance.Initialize(tree.position, tree.prefabIndex, this);
+            instance.Initialize(tree.position, tree.prefabIndex, 5, this);
 
             if (newTree.GetComponent<Collider>() == null)
                 newTree.AddComponent<CapsuleCollider>();

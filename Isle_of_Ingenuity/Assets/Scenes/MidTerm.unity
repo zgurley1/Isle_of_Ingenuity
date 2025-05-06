@@ -5253,6 +5253,98 @@ PrefabInstance:
       propertyPath: maxTrees
       value: 2000
       objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[1].time
+      value: 0.18653461
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[2].time
+      value: 0.9073706
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[3].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[1].value
+      value: 0.13750637
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[2].value
+      value: 0.21530241
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[3].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[0].inSlope
+      value: -0.06406352
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[1].inSlope
+      value: 0.61993384
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[2].inSlope
+      value: 0.007975966
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[3].inSlope
+      value: 2.588466
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[0].outSlope
+      value: -0.06406352
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[1].outSlope
+      value: 0.61993384
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[2].inWeight
+      value: 0.112361476
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[2].outSlope
+      value: 0.007975966
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[3].inWeight
+      value: 0.034542203
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[3].outSlope
+      value: 2.588466
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[0].outWeight
+      value: 0.6977548
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[1].outWeight
+      value: 0.11979099
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
+      propertyPath: scaleDistribution.m_Curve.Array.data[2].outWeight
+      value: 0.5953932
+      objectReference: {fileID: 0}
     - target: {fileID: 6371924318199814481, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
       propertyPath: m_Name
       value: TreeManager
