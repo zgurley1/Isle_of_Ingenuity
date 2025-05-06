@@ -1149,10 +1149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e7287d9d8b6764082b923b260e3330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wood: {fileID: 0}
-  stone: {fileID: 0}
-  plank: {fileID: 0}
-  brick: {fileID: 0}
+  wood: {fileID: 11400000, guid: fea95de606198be47813e41a332514fa, type: 2}
+  stone: {fileID: 11400000, guid: 38fd46524fead294b99deb7869c048fc, type: 2}
+  plank: {fileID: 11400000, guid: 492bf2106d375b244961335f41f4c5e2, type: 2}
+  brick: {fileID: 11400000, guid: 10a2a50e4eafeba4c8993edf02c8ec72, type: 2}
   woodSlots: 
   woodNum: 
   stoneSlots: 
