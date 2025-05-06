@@ -98,29 +98,36 @@ public class TreeSpawner : MonoBehaviour
             GameObject prefab = treePrefabs[tree.prefabIndex];
             GameObject newTree = Instantiate(prefab, tree.position, Quaternion.identity);
             
-            // Scale Tree objects
-            // if (tree.prefabIndex == 2) {
-            //     newTree.transform.localScale += new Vector3(10, 10, 10);
-            // }
+            float scale;
+            int health;
+
             if (tree.prefabIndex == 2) {
                 //newTree.transform.localScale = Vector3.one * Random.Range(minRockScale, maxRockScale);
                 float biasedRandom = scaleDistribution.Evaluate(Random.value);
-                float scale = Mathf.Lerp(minRockScale, maxRockScale, biasedRandom);
+
+                Debug.Log("BiasedRandom: " + biasedRandom);
+                scale = Mathf.Lerp(minRockScale, maxRockScale, biasedRandom);
                 newTree.transform.localScale = Vector3.one * scale;
-
-
                 newTree.transform.Translate(0,-1,0);
+                health = Mathf.FloorToInt(scale) - 2;
             }
             else {
                 float biasedRandom = scaleDistribution.Evaluate(Random.value);
-                float scale = Mathf.Lerp(minTreeScale, maxTreeScale, biasedRandom);
+                scale = Mathf.Lerp(minTreeScale, maxTreeScale, biasedRandom);
                 newTree.transform.localScale = Vector3.one * scale;
+                health = Mathf.FloorToInt(scale) + 2;
+
+                Debug.Log("BiasedRandom: " + biasedRandom);
             }
             
+            Debug.Log("Scale: " + scale);
+            Debug.Log("Health: " + health);
             
             // Add TreeInstance script and initialize
             TreeEntity instance = newTree.AddComponent<TreeEntity>();
-            instance.Initialize(tree.position, tree.prefabIndex, 5, this);
+            instance.Initialize(tree.position, tree.prefabIndex, health, this);
+
+            
 
             if (newTree.GetComponent<Collider>() == null)
                 newTree.AddComponent<CapsuleCollider>();

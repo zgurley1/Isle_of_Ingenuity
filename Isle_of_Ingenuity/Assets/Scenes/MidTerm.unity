@@ -5251,7 +5251,7 @@ PrefabInstance:
       objectReference: {fileID: 1548264012}
     - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
       propertyPath: maxTrees
-      value: 2000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2429177512217840357, guid: 4a2f3225f62689e4e84c196265c02b43, type: 3}
       propertyPath: scaleDistribution.m_Curve.Array.size
