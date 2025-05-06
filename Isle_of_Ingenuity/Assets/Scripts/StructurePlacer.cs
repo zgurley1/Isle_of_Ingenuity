@@ -42,6 +42,7 @@ public class StructurePlacer : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0)) // Left-click
             {
+                CancelBuilding();
                 PlaceStructure(snappedPos);
             }
         }

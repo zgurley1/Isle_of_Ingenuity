@@ -1120,6 +1120,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37be428b4d0536340a2881a5e0741043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &739314475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739314477}
+  - component: {fileID: 739314476}
+  m_Layer: 0
+  m_Name: MaterialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &739314476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739314475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e7287d9d8b6764082b923b260e3330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wood: {fileID: 0}
+  stone: {fileID: 0}
+  plank: {fileID: 0}
+  brick: {fileID: 0}
+  woodSlots: 
+  woodNum: 
+  stoneSlots: 
+  stoneNum: 
+  InventoryManager: {fileID: 0}
+--- !u!4 &739314477
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739314475}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -334.59845, y: -130.53717, z: -290.088}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &756891252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1295,6 +1348,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4839797935267529201, guid: e531cc7d62922d9408a2bbb38a49aa8a, type: 3}
+      propertyPath: wood
+      value: 
+      objectReference: {fileID: 11400000, guid: fea95de606198be47813e41a332514fa, type: 2}
+    - target: {fileID: 4839797935267529201, guid: e531cc7d62922d9408a2bbb38a49aa8a, type: 3}
+      propertyPath: brick
+      value: 
+      objectReference: {fileID: 11400000, guid: 10a2a50e4eafeba4c8993edf02c8ec72, type: 2}
+    - target: {fileID: 4839797935267529201, guid: e531cc7d62922d9408a2bbb38a49aa8a, type: 3}
+      propertyPath: plank
+      value: 
+      objectReference: {fileID: 11400000, guid: 492bf2106d375b244961335f41f4c5e2, type: 2}
+    - target: {fileID: 4839797935267529201, guid: e531cc7d62922d9408a2bbb38a49aa8a, type: 3}
+      propertyPath: stone
+      value: 
+      objectReference: {fileID: 11400000, guid: 38fd46524fead294b99deb7869c048fc, type: 2}
     - target: {fileID: 4839797935267529201, guid: e531cc7d62922d9408a2bbb38a49aa8a, type: 3}
       propertyPath: maxStackedItems
       value: 64
@@ -3289,10 +3358,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoneProcessButton: {fileID: 419082756}
   woodProcessButton: {fileID: 1819279889}
-  woodSlots: 
-  stoneSlots: 
-  woodNum: 
-  stoneNum: 
   wood: {fileID: 11400000, guid: fea95de606198be47813e41a332514fa, type: 2}
   stone: {fileID: 11400000, guid: 38fd46524fead294b99deb7869c048fc, type: 2}
   plank: {fileID: 11400000, guid: 492bf2106d375b244961335f41f4c5e2, type: 2}
@@ -3774,6 +3839,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 820ca5190b804be419afff1761851889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1870577831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6259138863017314265, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
+  m_PrefabInstance: {fileID: 2115832972}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1918536565
@@ -4609,6 +4685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4333512040267495659, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
+      propertyPath: m_Name
+      value: CloseBuildMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 4338732078716364490, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4797,6 +4877,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5695034377060542396, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5747697294047451610, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4895,6 +4979,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6259138863017314265, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492081649031076301, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492081649031076301, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492081649031076301, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 706067304}
+    - target: {fileID: 6492081649031076301, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492081649031076301, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseAll
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492081649031076301, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InventoryController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6492081649031076301, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6827733455998881394, guid: 21ca84cc7f5bdd64bbf7276ae5b347c1, type: 3}
@@ -5164,6 +5276,10 @@ PrefabInstance:
       propertyPath: UpgradeMenuGroup
       value: 
       objectReference: {fileID: 1189215265}
+    - target: {fileID: 2622434451173979220, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      propertyPath: buildHouseButton
+      value: 
+      objectReference: {fileID: 1870577831}
     - target: {fileID: 2622434451173979220, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
       propertyPath: MainInventoryGroup
       value: 
@@ -5669,3 +5785,4 @@ SceneRoots:
   - {fileID: 4759391021785706531}
   - {fileID: 171498854}
   - {fileID: 1131071098}
+  - {fileID: 739314477}

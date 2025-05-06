@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class InventoryManager : MonoBehaviour
     public Item[] startItems;
 
     int selectedSlot = -1;
+
+    [SerializeField] private Item wood;
+    [SerializeField] private Item stone;
+    [SerializeField] private Item plank;
+    [SerializeField] private Item brick;
 
     private void Awake()
     {
@@ -145,7 +151,5 @@ public class InventoryManager : MonoBehaviour
         }
         return -1;
     }
-
-
     
 }
