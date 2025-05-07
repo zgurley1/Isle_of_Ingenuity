@@ -79,6 +79,9 @@ public class StructurePlacer : MonoBehaviour
     {
         float flattenHeight = position.y;
         FlattenTerrain(position, flattenRadius, flattenHeight);
+
+        Vector3 heightOffset = new Vector3(0, 2, 0);
+        position += heightOffset;
         Instantiate(structurePrefab, position, Quaternion.identity);
     }
 
