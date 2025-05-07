@@ -105,7 +105,7 @@ public class TreeSpawner : MonoBehaviour
                 //newTree.transform.localScale = Vector3.one * Random.Range(minRockScale, maxRockScale);
                 float biasedRandom = scaleDistribution.Evaluate(Random.value);
 
-                Debug.Log("BiasedRandom: " + biasedRandom);
+                //Debug.Log("BiasedRandom: " + biasedRandom);
                 scale = Mathf.Lerp(minRockScale, maxRockScale, biasedRandom);
                 newTree.transform.localScale = Vector3.one * scale;
                 newTree.transform.Translate(0,-1,0);
@@ -117,11 +117,11 @@ public class TreeSpawner : MonoBehaviour
                 newTree.transform.localScale = Vector3.one * scale;
                 health = Mathf.FloorToInt(scale) + 2;
 
-                Debug.Log("BiasedRandom: " + biasedRandom);
+                //Debug.Log("BiasedRandom: " + biasedRandom);
             }
             
-            Debug.Log("Scale: " + scale);
-            Debug.Log("Health: " + health);
+            // Debug.Log("Scale: " + scale);
+            // Debug.Log("Health: " + health);
             
             // Add TreeInstance script and initialize
             TreeEntity instance = newTree.AddComponent<TreeEntity>();
