@@ -67,11 +67,26 @@ public class Harvestable : MonoBehaviour
         }
     }
 
+    // private bool IsCorrectTool(Item tool) {
+    //     if (requiredTool == ToolType.Axe && tool == InventoryManager.instance.GetSelectedItem(false) == axeItem) {
+    //         Debug.Log(requiredTool);
+    //         Debug.Log(tool);
+    //         Debug.Log("Tool is axe");
+    //         return true;
+    //     }
+    //     if (requiredTool == ToolType.Pickaxe && tool == InventoryManager.instance.GetSelectedItem(false) == pickaxeItem) {
+    //         Debug.Log("Tool is pickaxe");
+    //         return true;
+    //     }
+    //     return false;
+    // }
+
     private bool IsCorrectTool(Item tool) {
-        if (requiredTool == ToolType.Axe && tool == InventoryManager.instance.GetSelectedItem(true) == axeItem)
-            return true;
-        if (requiredTool == ToolType.Pickaxe && tool == InventoryManager.instance.GetSelectedItem(true) == pickaxeItem)
-            return true;
-        return false;
+    if (requiredTool == ToolType.Axe && tool == axeItem) {
+        return true;
+    } if (requiredTool == ToolType.Pickaxe && tool == pickaxeItem) {
+        return true;
     }
+    return false;
+}
 }

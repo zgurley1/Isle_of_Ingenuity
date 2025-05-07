@@ -7,6 +7,7 @@ public class Harvest : MonoBehaviour
     void Update() {
         if (currentTarget != null && Input.GetMouseButtonDown(0)) {
             Item selectedTool = InventoryManager.instance.GetSelectedItem(true);
+            Debug.Log($"[{gameObject.name}] calling Harvest()");
             currentTarget.Harvest(selectedTool);
         }
     }
