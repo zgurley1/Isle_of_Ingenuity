@@ -49,4 +49,46 @@ MonoBehaviour:
   - {fileID: 5935278547815300987, guid: e05ae677c7b3bc546bd36b488586fb0c, type: 3}
   - {fileID: 2479184009378418726, guid: b62637568d07eb141b948ab45ea8c3d4, type: 3}
   - {fileID: 1723959112359343785, guid: 1fe985496a9c3024ab4c86c7ffc0efa1, type: 3}
-  maxTrees: 100
+  maxTrees: 2000
+  scaleDistribution:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: -0.06406352
+      outSlope: -0.06406352
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.6977548
+    - serializedVersion: 3
+      time: 0.18653461
+      value: 0.13750637
+      inSlope: 0.61993384
+      outSlope: 0.61993384
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.11979099
+    - serializedVersion: 3
+      time: 0.9073706
+      value: 0.21530241
+      inSlope: 0.007975966
+      outSlope: 0.007975966
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.112361476
+      outWeight: 0.5953932
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2.588466
+      outSlope: 2.588466
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.034542203
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

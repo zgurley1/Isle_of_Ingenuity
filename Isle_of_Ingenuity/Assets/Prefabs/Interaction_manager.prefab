@@ -46,9 +46,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainInventoryGroup: {fileID: 0}
-  playerController: {fileID: 0}
   BuildMenuGroup: {fileID: 0}
   UpgradeMenuGroup: {fileID: 0}
+  ProcessMenuGroup: {fileID: 0}
+  woodProcessButton: {fileID: 0}
+  stoneProcessButton: {fileID: 0}
+  buildHouseButton: {fileID: 0}
+  UpgradeText: {fileID: 0}
+  UIActive: 0
 --- !u!114 &8795330413626576395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,3 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixedDockPrefab: {fileID: 5954596082880926028, guid: e5141e3b3e0f10b4f8f21e90f18798d0, type: 3}
   brokenDockInScene: {fileID: 0}
+  boatPosition: {fileID: 0}
+  boat: {fileID: 5238067764778158439, guid: de7dc9551791b9540a64d0fdaace5b0b, type: 3}
+  fixDockButton: {fileID: 0}
+  buildBoatButton: {fileID: 0}

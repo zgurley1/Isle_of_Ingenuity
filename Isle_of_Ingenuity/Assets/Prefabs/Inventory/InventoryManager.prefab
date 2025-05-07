@@ -83,6 +83,10 @@ MonoBehaviour:
   startItems:
   - {fileID: 11400000, guid: 06cb57afe56f2fd44bd6aa74d5de3438, type: 2}
   - {fileID: 11400000, guid: fa0ee1306f697bf4c9a202d7c9a9d328, type: 2}
+  wood: {fileID: 11400000, guid: fea95de606198be47813e41a332514fa, type: 2}
+  stone: {fileID: 11400000, guid: 38fd46524fead294b99deb7869c048fc, type: 2}
+  plank: {fileID: 11400000, guid: 492bf2106d375b244961335f41f4c5e2, type: 2}
+  brick: {fileID: 11400000, guid: 10a2a50e4eafeba4c8993edf02c8ec72, type: 2}
 --- !u!114 &-423723992700298412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,7 +94,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8886951252796902508}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d35218c1bf1049544b4b1fc40fb29810, type: 3}
   m_Name: 
