@@ -1,4 +1,5 @@
 using UnityEngine;
+using Assets.SimpleSpinner;
 
 
 public class TreeEntity : MonoBehaviour
@@ -39,6 +40,7 @@ public class Harvestable : MonoBehaviour
     //public Item logItem;
     public Item axeItem;
     public Item pickaxeItem;
+    // public SimpleSpinner spinner;
     //public Item stoneItem;
 
     public enum ToolType {
@@ -51,12 +53,14 @@ public class Harvestable : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void Harvest(Item usedTool) {
+    public void Harvest(Item usedTool, SimpleSpinner spinner) {
         if (!IsCorrectTool(usedTool)) {
             Debug.Log("Wrong tool for this resource.");
             return;
         }
-
+        if (spinner != null) {
+            spinner.PlaySpin();
+        }
         currentHealth--;
         InventoryManager.instance.AddItem(dropItem);
         Debug.Log($"Collected {dropItem.name}! Remaining health: {currentHealth}");
