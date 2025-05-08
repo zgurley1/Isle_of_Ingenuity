@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbc70f493e9b4745be621d159145135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  structurePrefab: {fileID: 8619690618180685328, guid: c97e2f503c68e7f429d39ac4d16a3237, type: 3}
+  structurePrefab: {fileID: 150779668814924175, guid: 416b8f9fb3e718b49bbf924b5aff8a72, type: 3}
   ghostPrefab: {fileID: 8619690618180685328, guid: 83ea6f3dca0826e41b8209bcf1804a99, type: 3}
   gridSize: 5
-  flattenRadius: 5
+  flattenRadius: 10
+  MaterialManager: {fileID: 0}
