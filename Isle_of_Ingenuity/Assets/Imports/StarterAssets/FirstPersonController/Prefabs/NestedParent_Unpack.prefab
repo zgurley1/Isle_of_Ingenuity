@@ -86,7 +86,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -423723992700298412, guid: e531cc7d62922d9408a2bbb38a49aa8a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -310,15 +311,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.210209
+      value: -22.210205
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.161316
+      value: 10.161318
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.948786
+      value: -23.948792
       objectReference: {fileID: 0}
     - target: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
       propertyPath: m_LocalRotation.w
@@ -465,12 +466,6 @@ PrefabInstance:
       addedObject: {fileID: 3450102772808082303}
     - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5049491542082626554}
-    - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8663301413339002335}
-    - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 8148082952906927561}
     - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       insertIndex: -1
@@ -497,39 +492,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinner: {fileID: 0}
---- !u!114 &5049491542082626554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453084650579209855}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79428d634babb134a979124f0b272f46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canOpenUpgradeScreen: 0
-  UpgradeMenu: {fileID: 0}
-  repairText: {fileID: 0}
---- !u!114 &8663301413339002335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 453084650579209855}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e71aeeb21af97747aa7f71adc015b71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stoneProcessButton: {fileID: 0}
-  woodProcessButton: {fileID: 0}
-  wood: {fileID: 11400000, guid: fea95de606198be47813e41a332514fa, type: 2}
-  stone: {fileID: 11400000, guid: 38fd46524fead294b99deb7869c048fc, type: 2}
-  plank: {fileID: 11400000, guid: 492bf2106d375b244961335f41f4c5e2, type: 2}
-  brick: {fileID: 11400000, guid: 10a2a50e4eafeba4c8993edf02c8ec72, type: 2}
 --- !u!114 &8148082952906927561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +545,10 @@ MonoBehaviour:
   woodNum: 
   stoneSlots: 
   stoneNum: 
+  plankSlots: 
+  plankNum: 
+  brickSlots: 
+  brickNum: 
   houseCostWood: 3
   houseCostStone: 3
   dockCostWood: 1
