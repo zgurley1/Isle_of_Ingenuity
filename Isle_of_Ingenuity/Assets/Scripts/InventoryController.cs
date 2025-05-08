@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
 
 public class InventoryController : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class InventoryController : MonoBehaviour
     public Button woodProcessButton;
     public Button stoneProcessButton;
     public Button buildHouseButton;
+    public Button upgradeDockButton;
+    public Button upgradeBoatButton;
 
 
     
@@ -34,10 +37,12 @@ public class InventoryController : MonoBehaviour
 
     private DockUpgradeZone dockUpgradeZone;
     private MaterialManager MaterialManager;
+    private UpgradeActions UpgradeActions;
 
     void Start() {
         dockUpgradeZone = FindAnyObjectByType<DockUpgradeZone>();
         MaterialManager = FindAnyObjectByType<MaterialManager>();
+        UpgradeActions = FindAnyObjectByType<UpgradeActions>();
         CursorSwitch(false);
     }
 
@@ -90,7 +95,7 @@ public class InventoryController : MonoBehaviour
 
                 buildActive = !buildActive;
                 CursorSwitch(buildActive);
-                UpdateButtons();
+                UpdateButtons(MaterialManager.houseCost, buildHouseButton);
                 BuildMenuGroup.SetActive(buildActive);
             }
             else
@@ -103,7 +108,16 @@ public class InventoryController : MonoBehaviour
         {
             if (UpgradeMenuGroup != null)
             {
+                upgradeDockButton.interactable = false;
+                upgradeBoatButton.interactable = false;
+
                 SwitchUpgradeUI();
+                if (!UpgradeActions.dockFixed) {
+                    UpdateButtons(MaterialManager.dockCost, upgradeDockButton);
+                }
+                else if (UpgradeActions.dockFixed && !UpgradeActions.boatFixed){
+                    UpdateButtons(MaterialManager.boatCost, upgradeBoatButton);
+                }
             }
             else
             {
@@ -112,21 +126,32 @@ public class InventoryController : MonoBehaviour
         }
     }
 
-    void UpdateButtons() {
-        var matNum = MaterialManager.getBaseMatNum();
+    void UpdateButtons(List<int> cost, Button button) {
+        var matNum = MaterialManager.getAllMatNum();
         int numWood = matNum.Item1;
         int numStone = matNum.Item2;
+        int numPlank = matNum.Item3;
+        int numBrick = matNum.Item4;
 
-        if (numWood >= MaterialManager.houseCostWood && numStone >= MaterialManager.houseCostStone) {
-            buildHouseButton.interactable = true;
+        if (numWood < cost[0]) {
+            button.interactable = false;
+            Debug.Log("Not enough wood.. Amount:" + numWood + " Cost: " + cost[0]);
+        }
+        else if (numStone < cost[1]) {
+            button.interactable = false;
+            Debug.Log("Not enough stone");
+        }
+        else if (numPlank < cost[2]) {
+            button.interactable = false;
+            Debug.Log("Not enough planks");
+        }
+        else if (numBrick < cost[3]) {
+            button.interactable = false;
+            Debug.Log("Not enough bricks");
         }
         else {
-            buildHouseButton.interactable = false;
+            button.interactable = true;
         }
-
-
-        Debug.Log("Wood num: " + numWood);
-        Debug.Log("Stone num: " + numStone);
     }
     
     public void CloseAll()

@@ -13,7 +13,14 @@ public class UpgradeActions : MonoBehaviour
     public Button buildBoatButton;
 
 
+    public bool dockFixed = false;
+    public bool boatFixed = false;
 
+    private MaterialManager MaterialManager;
+
+    void Start() {
+        MaterialManager = FindAnyObjectByType<MaterialManager>();
+    }
 
     public void FixDock()
     {
@@ -26,16 +33,8 @@ public class UpgradeActions : MonoBehaviour
             Destroy(brokenDockInScene);
             Instantiate(fixedDockPrefab, dockPositionOffset, dockRotation);
 
-            
-
-            if (fixDockButton != null)
-            {
-                fixDockButton.interactable = false;
-            }
-            if (buildBoatButton != null)
-            {
-                buildBoatButton.interactable= true;
-            }
+            MaterialManager.UpgradeCostDock();
+            dockFixed = true;
 
             Debug.Log("Dock repaired!");
         }
@@ -55,10 +54,8 @@ public class UpgradeActions : MonoBehaviour
             Destroy(boatPosition);
             Instantiate(boat, boatPlacePosition, boatPlaceRotation);
 
-            if (buildBoatButton != null)
-            {
-                buildBoatButton.interactable = false;
-            }
+            MaterialManager.UpgradeCostBoat();
+            boatFixed = true;
 
             Debug.Log("Boat Built!");
         }
