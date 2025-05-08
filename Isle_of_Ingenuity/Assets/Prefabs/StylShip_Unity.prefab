@@ -2836,6 +2836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8333537223512550139}
+  - component: {fileID: 7808066300846157959}
   m_Layer: 0
   m_Name: StylShip_Unity
   m_TagString: Untagged
@@ -2851,7 +2852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5238067764778158439}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.97356147, z: -0, w: -0.22842537}
+  m_LocalRotation: {x: 0, y: 0.973561, z: -0, w: -0.22842722}
   m_LocalPosition: {x: 480.43, y: 11.76, z: 352.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2901,6 +2902,24 @@ Transform:
   - {fileID: 6327597119316430101}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 206.409, z: 0}
+--- !u!114 &7808066300846157959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238067764778158439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982e28f6fdb8f8d439072672b8e72df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 5
+  reachDistance: 0.5
 --- !u!1 &5559593592620247693
 GameObject:
   m_ObjectHideFlags: 0
