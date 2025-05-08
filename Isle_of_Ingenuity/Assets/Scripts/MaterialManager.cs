@@ -17,6 +17,11 @@ public class MaterialManager: MonoBehaviour
     public List<int> stoneSlots = new List<int>();
     public List<int> stoneNum = new List<int>();
 
+
+    [Header("Cost")]
+    public int houseCostWood = 3;
+    public int houseCostStone = 3;
+
     public InventoryManager InventoryManager;
 
     public static MaterialManager Instance;
@@ -96,5 +101,29 @@ public class MaterialManager: MonoBehaviour
             }
         }
         return -1;
+    }
+
+
+    public void BuildHouse() {
+        ClearList();
+        FillList();
+        //Find inventory slot that has material in it
+        int woodIndex = GetFirstIndex(woodNum);
+        int stoneIndex = GetFirstIndex(stoneNum);
+
+        Debug.Log("Wood Index: " + woodIndex + "   Stone Index: " + stoneIndex);
+
+        //Remove material from inventory slot
+        if (woodIndex != -1 && stoneIndex != -1) {
+            bool removedWood = InventoryManager.RemoveItem(woodSlots[woodIndex], houseCostWood);
+            bool removedStone = InventoryManager.RemoveItem(stoneSlots[stoneIndex], houseCostStone);
+
+            Debug.Log("Wood Removed: " + removedWood + " Stone Removed: " + removedStone);
+
+            if (removedWood && removedStone) {
+                woodNum[woodIndex] -= houseCostWood;
+                stoneNum[stoneIndex] -= houseCostStone;
+            }
+        }
     }
 }
