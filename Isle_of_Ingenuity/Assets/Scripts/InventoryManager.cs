@@ -88,15 +88,19 @@ public class InventoryManager : MonoBehaviour
     }
 
 
-    public void RemoveItem(int index) {
+    public bool RemoveItem(int index, int amount) {
         
         InventoryItem itemInSlot = inventorySlots[index].GetComponentInChildren<InventoryItem>();
-        itemInSlot.count--;
+        if (itemInSlot.count < amount) {
+            return false;
+        }
+        itemInSlot.count -= amount;
         if (itemInSlot.count == 0) {
             Destroy(itemInSlot.gameObject);
-            return;
+            return true;
         }
         itemInSlot.RefereshCount();
+        return true;
     }
 
     void SpawnNewItem(Item item, InventorySlot slot) {

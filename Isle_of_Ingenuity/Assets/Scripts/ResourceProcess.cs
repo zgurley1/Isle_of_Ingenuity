@@ -55,8 +55,8 @@ public class ResourceProcess : MonoBehaviour
                     MaterialManager.ClearList();
                     MaterialManager.FillList();
 
-                    Debug.Log("Wood slots length" + MaterialManager.woodSlots.Count);
-                    Debug.Log("Stone slots length" + MaterialManager.stoneSlots.Count);
+                    // Debug.Log("Wood slots length" + MaterialManager.woodSlots.Count);
+                    // Debug.Log("Stone slots length" + MaterialManager.stoneSlots.Count);
 
                     UpdateButtons();
                 }
@@ -101,7 +101,7 @@ public class ResourceProcess : MonoBehaviour
             bool added = MaterialManager.InventoryManager.AddItem(plank);
 
             if (added) {
-                MaterialManager.InventoryManager.RemoveItem(MaterialManager.woodSlots[inventoryIndex]);
+                MaterialManager.InventoryManager.RemoveItem(MaterialManager.woodSlots[inventoryIndex], 1);
                 MaterialManager.woodNum[inventoryIndex] -= 1;
             }
         }
@@ -114,7 +114,7 @@ public class ResourceProcess : MonoBehaviour
             bool added = MaterialManager.InventoryManager.AddItem(brick);
 
             if (added) {
-                MaterialManager.InventoryManager.RemoveItem(MaterialManager.stoneSlots[inventoryIndex]);
+                MaterialManager.InventoryManager.RemoveItem(MaterialManager.stoneSlots[inventoryIndex], 1);
                 MaterialManager.stoneNum[inventoryIndex] -= 1;
             }
         }

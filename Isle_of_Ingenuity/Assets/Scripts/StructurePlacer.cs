@@ -8,6 +8,8 @@ public class StructurePlacer : MonoBehaviour
     public float gridSize = 5f;
     public float flattenRadius = 5f;
 
+    public MaterialManager MaterialManager;
+
     private GameObject ghostInstance;
 
     private bool isBuilding = false;
@@ -19,6 +21,8 @@ public class StructurePlacer : MonoBehaviour
             ghostInstance = Instantiate(ghostPrefab);
             SetLayerRecursively(ghostInstance, LayerMask.NameToLayer("Ignore Raycast")); // optional: prevent ghost from blocking raycasts
         }
+
+        MaterialManager = FindAnyObjectByType<MaterialManager>();
     }
 
     void Update()
@@ -44,6 +48,9 @@ public class StructurePlacer : MonoBehaviour
             {
                 CancelBuilding();
                 PlaceStructure(snappedPos);
+                MaterialManager.BuildHouse();
+
+                Debug.Log("Called Build House");
             }
         }
     }
@@ -79,6 +86,9 @@ public class StructurePlacer : MonoBehaviour
     {
         float flattenHeight = position.y;
         FlattenTerrain(position, flattenRadius, flattenHeight);
+
+        Vector3 heightOffset = new Vector3(0, 2, 0);
+        position += heightOffset;
         Instantiate(structurePrefab, position, Quaternion.identity);
     }
 
