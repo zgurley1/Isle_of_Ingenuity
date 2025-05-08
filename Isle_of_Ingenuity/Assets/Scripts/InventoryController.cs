@@ -19,6 +19,9 @@ public class InventoryController : MonoBehaviour
     public Button stoneProcessButton;
     public Button buildHouseButton;
 
+
+    
+
     [Header("OTHER")]
     public GameObject UpgradeText;
 
@@ -113,6 +116,14 @@ public class InventoryController : MonoBehaviour
         var matNum = MaterialManager.getBaseMatNum();
         int numWood = matNum.Item1;
         int numStone = matNum.Item2;
+
+        if (numWood >= MaterialManager.houseCostWood && numStone >= MaterialManager.houseCostStone) {
+            buildHouseButton.interactable = true;
+        }
+        else {
+            buildHouseButton.interactable = false;
+        }
+
 
         Debug.Log("Wood num: " + numWood);
         Debug.Log("Stone num: " + numStone);
