@@ -585,6 +585,17 @@ MonoBehaviour:
   stoneNum: 
   houseCostWood: 3
   houseCostStone: 3
+  dockCostWood: 1
+  dockCostStone: 1
+  dockCostPlank: 1
+  dockCostBrick: 1
+  boatCostWood: 2
+  boatCostStone: 2
+  boatCostPlank: 2
+  boatCostBrick: 2
+  houseCost: 
+  dockCost: 
+  boatCost: 
   InventoryManager: {fileID: 0}
 --- !u!4 &937451010987979973 stripped
 Transform:

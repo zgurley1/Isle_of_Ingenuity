@@ -2220,6 +2220,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1980696630}
     - target: {fileID: 1587048195849120594, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: upgradeBoatButton
+      value: 
+      objectReference: {fileID: 1535776197}
+    - target: {fileID: 1587048195849120594, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: upgradeDockButton
+      value: 
+      objectReference: {fileID: 1379958159}
+    - target: {fileID: 1587048195849120594, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: woodProcessButton
       value: 
       objectReference: {fileID: 1819279889}
