@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Brick
   m_EditorClassIdentifier: 
   tile: {fileID: 0}
-  image: {fileID: 21300000, guid: a30cffb09a2cd8a4392f62e5a2f61b37, type: 3}
+  image: {fileID: 21300000, guid: 8a53eea380ec3c34dbf0c10e0b47250d, type: 3}
   type: 1
   actionType: 1
   range: {x: 5, y: 4}
