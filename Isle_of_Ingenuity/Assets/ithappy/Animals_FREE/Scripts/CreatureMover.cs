@@ -47,6 +47,7 @@ namespace Controller
         public Vector3 Target => m_Target;
         public bool IsRun => m_IsRun;
         private Vector3 m_WalkDirection = Vector3.forward;
+        private Rigidbody m_Rigidbody;
 
         private void OnValidate()
         {
@@ -72,7 +73,7 @@ namespace Controller
             // m_Movement.Move(Time.deltaTime, in m_Axis, in m_Target, m_IsRun, m_IsMoving, out var animAxis, out var isAir);
             var stateInfo = m_Animator.GetCurrentAnimatorStateInfo(0);
 
-            if (stateInfo.IsName("Chicken_002_run") || stateInfo.IsName("Horse_001_walk") || stateInfo.IsName("Deer_001_walk")) {
+            if (stateInfo.IsName("Chicken_002_run") || stateInfo.IsName("Horse_001_walk") || stateInfo.IsName("Deer_001_walk") || stateInfo.IsName("Kitty_001_walk") || stateInfo.IsName("Kitty_001_run")) {
 
                 if (m_WalkDirection != Vector3.zero){
                     Quaternion targetRotation = Quaternion.LookRotation(m_WalkDirection, Vector3.up);
@@ -86,10 +87,14 @@ namespace Controller
                     m_IsMoving = true;
                 }
                 transform.position += transform.forward * m_RunSpeed * Time.deltaTime;
-
             } else {
                 m_IsMoving = false;
             }
+
+            Vector3 pos = transform.position;
+            float terrainY = Terrain.activeTerrain.SampleHeight(pos) + Terrain.activeTerrain.GetPosition().y;
+            pos.y = terrainY;
+            transform.position = pos;
 
         }
 
