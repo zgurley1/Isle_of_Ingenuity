@@ -46,6 +46,7 @@ namespace Controller
         public Vector2 Axis => m_Axis;
         public Vector3 Target => m_Target;
         public bool IsRun => m_IsRun;
+        private Vector3 m_WalkDirection = Vector3.forward;
 
         private void OnValidate()
         {
@@ -71,11 +72,25 @@ namespace Controller
             // m_Movement.Move(Time.deltaTime, in m_Axis, in m_Target, m_IsRun, m_IsMoving, out var animAxis, out var isAir);
             var stateInfo = m_Animator.GetCurrentAnimatorStateInfo(0);
 
-            if (stateInfo.IsName("Chicken_002_run"))
-            {
+            if (stateInfo.IsName("Chicken_002_run") || stateInfo.IsName("Horse_001_walk") || stateInfo.IsName("Deer_001_walk")) {
+
+                if (m_WalkDirection != Vector3.zero){
+                    Quaternion targetRotation = Quaternion.LookRotation(m_WalkDirection, Vector3.up);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5f * Time.deltaTime);
+                }
+
+                if (!m_IsMoving) {
+                    // Choose a new random direction
+                    float angle = UnityEngine.Random.Range(0f, 360f);
+                    m_WalkDirection = Quaternion.Euler(0f, angle, 0f) * Vector3.forward;
+                    m_IsMoving = true;
+                }
                 transform.position += transform.forward * m_RunSpeed * Time.deltaTime;
+
+            } else {
+                m_IsMoving = false;
             }
-            // m_Animation.Animate(in animAxis, m_IsRun ? 1f : 0f, Time.deltaTime);
+
         }
 
         private void OnAnimatorMove()
