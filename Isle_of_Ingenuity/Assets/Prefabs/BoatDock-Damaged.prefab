@@ -669,7 +669,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2545024009345338495}
-  - component: {fileID: 3374491134855120528}
   m_Layer: 0
   m_Name: BoatDock-Damaged
   m_TagString: Untagged
@@ -700,20 +699,6 @@ Transform:
   - {fileID: 8594410845393713408}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3374491134855120528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5954596082880926028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 412f092157db0424682663b2a553824d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  repairMenu: {fileID: 0}
-  repairText: {fileID: 0}
 --- !u!1 &7849611561293369979
 GameObject:
   m_ObjectHideFlags: 0

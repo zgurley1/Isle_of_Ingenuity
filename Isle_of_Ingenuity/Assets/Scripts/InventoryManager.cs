@@ -13,10 +13,18 @@ public class InventoryManager : MonoBehaviour
 
     int selectedSlot = -1;
 
+
+    [Header("Materials")]
     [SerializeField] private Item wood;
     [SerializeField] private Item stone;
     [SerializeField] private Item plank;
     [SerializeField] private Item brick;
+
+
+
+    [Header("Tools")]
+    public Item axe;
+    public Item pickaxe;
 
     private void Awake()
     {

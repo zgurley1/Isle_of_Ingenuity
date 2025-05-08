@@ -6,6 +6,12 @@ public class DockUpgradeZone : MonoBehaviour
     public GameObject UpgradeMenu;
     public GameObject repairText;
 
+    public InventoryManager InventoryManager;
+
+    void Start() {
+        InventoryManager  = FindAnyObjectByType<InventoryManager>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("UpgradeStation")) // Or check for a component instead
@@ -13,6 +19,16 @@ public class DockUpgradeZone : MonoBehaviour
             canOpenUpgradeScreen = true;
             repairText.SetActive(true);
 
+        }
+
+
+        if (other.CompareTag("InitialItems")) {
+            Debug.Log("Initial Items");
+
+            InventoryManager.AddItem(InventoryManager.axe);
+            InventoryManager.AddItem(InventoryManager.pickaxe);
+
+            other.enabled = false;
         }
     }
 
