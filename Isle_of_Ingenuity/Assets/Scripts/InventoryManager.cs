@@ -15,10 +15,10 @@ public class InventoryManager : MonoBehaviour
 
 
     [Header("Materials")]
-    [SerializeField] private Item wood;
-    [SerializeField] private Item stone;
-    [SerializeField] private Item plank;
-    [SerializeField] private Item brick;
+    public Item wood;
+    public Item stone;
+    public Item plank;
+    public Item brick;
 
 
 

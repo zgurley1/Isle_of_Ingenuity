@@ -39,11 +39,13 @@ public class InventoryController : MonoBehaviour
     private DockUpgradeZone dockUpgradeZone;
     private MaterialManager MaterialManager;
     private UpgradeActions UpgradeActions;
+    private CheatCodeManager cheatCodeManager;
 
     void Start() {
         dockUpgradeZone = FindAnyObjectByType<DockUpgradeZone>();
         MaterialManager = FindAnyObjectByType<MaterialManager>();
         UpgradeActions = FindAnyObjectByType<UpgradeActions>();
+        cheatCodeManager = FindAnyObjectByType<CheatCodeManager>();
         CursorSwitch(false);
     }
 
@@ -131,6 +133,13 @@ public class InventoryController : MonoBehaviour
         {
             if (CheatCodeMenuGroup != null)
             {
+                if (!cheatCodeManager.canvasActive) {
+                    cheatCodeManager.SwitchUI();
+                    CloseAll();
+                    return;
+                }
+                
+                
                 inventoryActive = false;
                 upgradeActive = false;
                 processActive = false;
@@ -185,12 +194,14 @@ public class InventoryController : MonoBehaviour
         inventoryActive = false;
         buildActive = false;
         processActive = false;
+        cheatActive = false;
 
 
         ProcessMenuGroup.SetActive(processActive);
         UpgradeMenuGroup.SetActive(upgradeActive);
         BuildMenuGroup.SetActive(buildActive);
         MainInventoryGroup.SetActive(inventoryActive);
+        CheatCodeMenuGroup.SetActive(cheatActive);
         CursorSwitch(false);
     }
 
