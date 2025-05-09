@@ -41,6 +41,8 @@ public class InventoryController : MonoBehaviour
     private UpgradeActions UpgradeActions;
     private CheatCodeManager cheatCodeManager;
 
+    private BoatMovement boatMovement;
+
     void Start() {
         dockUpgradeZone = FindAnyObjectByType<DockUpgradeZone>();
         MaterialManager = FindAnyObjectByType<MaterialManager>();
@@ -127,6 +129,13 @@ public class InventoryController : MonoBehaviour
             {
                 Debug.LogWarning("MainInventoryGroup 'upgrade' is not assigned in the Inspector.");
             }
+        }
+
+        if (dockUpgradeZone.canRideBoat && Input.GetKeyDown(KeyCode.E))
+        {
+            
+            boatMovement = FindAnyObjectByType<BoatMovement>();
+            boatMovement.StartSailing();
         }
 
         if (Input.GetKeyDown(KeyCode.M))

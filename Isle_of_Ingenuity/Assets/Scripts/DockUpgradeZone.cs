@@ -3,8 +3,10 @@ using UnityEngine;
 public class DockUpgradeZone : MonoBehaviour
 {
     public bool canOpenUpgradeScreen = false;
+    public bool canRideBoat = false;
     public GameObject UpgradeMenu;
     public GameObject repairText;
+    public GameObject boardBoatText;
 
     public InventoryManager InventoryManager;
 
@@ -30,6 +32,11 @@ public class DockUpgradeZone : MonoBehaviour
 
             other.enabled = false;
         }
+
+        if (other.CompareTag("ShipCollider")) {
+            canRideBoat = true;
+            boardBoatText.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -39,6 +46,11 @@ public class DockUpgradeZone : MonoBehaviour
             canOpenUpgradeScreen = false;
             repairText.SetActive(false);
             UpgradeMenu.SetActive(false);
+        }
+        if (other.CompareTag("ShipCollider"))
+        {
+            canRideBoat = false;
+            boardBoatText.SetActive(false);
         }
     }
 }

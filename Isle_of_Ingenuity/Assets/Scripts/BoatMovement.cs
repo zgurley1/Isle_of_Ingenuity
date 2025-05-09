@@ -4,12 +4,18 @@ using UnityEngine;
 public class BoatMovement : MonoBehaviour
 {
     public Transform[] waypoints;
+    public Transform mountPoint;
     public float speed = 5f;
     public float reachDistance = 0.5f;
     private int currentWaypoint = 0;
     private bool isSailing = false;
 
+    [SerializeField] private GameObject player;
+
     void Start() {
+        player = GameObject.FindGameObjectWithTag("Player");
+        mountPoint = GameObject.FindGameObjectWithTag("mountPoint").transform;
+
         Debug.Log("Boat object initated");
         GameObject pathParent = GameObject.Find("BoatSailPath");
         waypoints = new Transform[pathParent.transform.childCount];
@@ -22,7 +28,7 @@ public class BoatMovement : MonoBehaviour
             Debug.Log("Waypoint " + i + " transform:" + waypoints[i]);
         }
         
-        StartSailing();
+        //StartSailing();
     }
     
     void Update()
@@ -44,5 +50,8 @@ public class BoatMovement : MonoBehaviour
     public void StartSailing()
     {
         isSailing = true;
+        //player.transform.position = mountPoint.position;
+        //player.transform.rotation = mountPoint.rotation;
+        //player.transform.SetParent(this.transform);
     }
 }

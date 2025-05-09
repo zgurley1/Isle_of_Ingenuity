@@ -11,6 +11,8 @@ TagManager:
   - UpgradeStation
   - ResourceProcessor
   - InitialItems
+  - ShipCollider
+  - mountPoint
   layers:
   - Default
   - TransparentFX

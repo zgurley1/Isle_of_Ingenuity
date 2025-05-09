@@ -168,8 +168,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4196530447992764043, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3527312207286915137}
   m_SourcePrefab: {fileID: 100100000, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+--- !u!1 &603345892887652749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4196530447992764043, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
+  m_PrefabInstance: {fileID: 3630624579803307782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3527312207286915137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603345892887652749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf726bf6cebbb247aeee6bd62af0ce9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  canvasActive: 1
 --- !u!4 &7678717296992355703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6409424240908098161, guid: 756fec8a206167e4ca3a793f2f89d018, type: 3}
@@ -513,10 +535,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canOpenUpgradeScreen: 0
+  canRideBoat: 0
   UpgradeMenu: {fileID: 0}
   repairText: {fileID: 0}
+  boardBoatText: {fileID: 0}
   InventoryManager: {fileID: 0}
-  toolcollider: {fileID: 0}
 --- !u!114 &7912406286480937506
 MonoBehaviour:
   m_ObjectHideFlags: 0
