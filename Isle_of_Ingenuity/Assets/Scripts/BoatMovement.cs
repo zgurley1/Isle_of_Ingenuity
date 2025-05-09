@@ -10,6 +10,18 @@ public class BoatMovement : MonoBehaviour
     private bool isSailing = false;
 
     void Start() {
+        Debug.Log("Boat object initated");
+        GameObject pathParent = GameObject.Find("BoatSailPath");
+        waypoints = new Transform[pathParent.transform.childCount];
+
+        Debug.Log("Found " + waypoints.Length + " waypoints");
+
+        for (int i = 0; i < waypoints.Length; i++)
+        {
+            waypoints[i] = pathParent.transform.GetChild(i);
+            Debug.Log("Waypoint " + i + " transform:" + waypoints[i]);
+        }
+        
         StartSailing();
     }
     

@@ -310,37 +310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820ca5190b804be419afff1761851889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &198673452
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 198673453}
-  m_Layer: 0
-  m_Name: BoatWaypoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &198673453
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198673452}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9772126, z: -0, w: -0.21226282}
-  m_LocalPosition: {x: -421.9, y: 142.64496, z: -451.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1558400757}
-  m_LocalEulerAnglesHint: {x: 0, y: 204.51, z: 0}
 --- !u!1001 &222736553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -646,37 +615,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7922649801668778606, guid: 4ecab060b0afb5d4db61f7f1311b9e24, type: 3}
   m_PrefabInstance: {fileID: 1705297354}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &399400352
+--- !u!1 &399400352 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4230921744020263562, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+  m_PrefabInstance: {fileID: 6051449301559605594}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 399400353}
-  m_Layer: 0
-  m_Name: BoatStartPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &399400353
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399400352}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9772126, z: -0, w: -0.21226282}
-  m_LocalPosition: {x: -352.33554, y: 142.64496, z: -274.0495}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1558400757}
-  m_LocalEulerAnglesHint: {x: 0, y: 204.51, z: 0}
 --- !u!1001 &412902042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1458,6 +1401,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1381297915}
     - target: {fileID: 5430563786038608309, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: startItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430563786038608309, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: 'startItems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 492bf2106d375b244961335f41f4c5e2, type: 2}
+    - target: {fileID: 5430563786038608309, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: 'inventorySlots.Array.data[0]'
       value: 
       objectReference: {fileID: 1066590730}
@@ -1886,37 +1837,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ecab060b0afb5d4db61f7f1311b9e24, type: 3}
---- !u!1 &788691156
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 788691157}
-  m_Layer: 0
-  m_Name: BoatWaypoint (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &788691157
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 788691156}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9772126, z: -0, w: -0.21226282}
-  m_LocalPosition: {x: -543.2, y: 142.64496, z: -717.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1558400757}
-  m_LocalEulerAnglesHint: {x: 0, y: 204.51, z: 0}
 --- !u!1001 &791148225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3871,40 +3791,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfb23d60f30c46847ba7815aa09e2567, type: 3}
---- !u!1 &1558400756
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1558400757}
-  m_Layer: 0
-  m_Name: BoatSailPath
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1558400757
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558400756}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 840.29553, y: -131.55496, z: 624.8495}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 399400353}
-  - {fileID: 198673453}
-  - {fileID: 788691157}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1573810045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4483999970917742656, guid: dfb23d60f30c46847ba7815aa09e2567, type: 3}
@@ -5682,6 +5568,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46e36d9702edc834a92a2c2cba4f6705, type: 3}
+--- !u!1001 &6051449301559605594
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4582545068262454537, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+      propertyPath: m_Name
+      value: BoatSailPath
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555153854853333919, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 840.29553
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555153854853333919, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -131.55496
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555153854853333919, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 624.8495
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555153854853333919, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555153854853333919, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555153854853333919, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555153854853333919, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555153854853333919, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555153854853333919, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555153854853333919, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b6ebd198e78db9a40ae7937a8b58ce25, type: 3}
 --- !u!1001 &7063102019248178211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5893,4 +5836,4 @@ SceneRoots:
   - {fileID: 412902042}
   - {fileID: 670478002}
   - {fileID: 769992384}
-  - {fileID: 1558400757}
+  - {fileID: 6051449301559605594}

@@ -8,12 +8,12 @@ public class InventoryController : MonoBehaviour
     //public PlayerController playerController;
     [Header("UI Elements")]
     
-    public GameObject MainInventoryGroup; // Assign this in the Inspector
-    //public GameObject TestGroup;
+    public GameObject MainInventoryGroup;
     
     public GameObject BuildMenuGroup;
     public GameObject UpgradeMenuGroup;
     public GameObject ProcessMenuGroup;
+    public GameObject CheatCodeMenuGroup;
 
     [Header("Buttons")]
     public Button woodProcessButton;
@@ -32,6 +32,7 @@ public class InventoryController : MonoBehaviour
     private bool buildActive = false;
     private bool upgradeActive = false;
     private bool processActive = false;
+    private bool cheatActive = false;
 
     public bool UIActive = false;
 
@@ -53,8 +54,9 @@ public class InventoryController : MonoBehaviour
         inventoryActive = MainInventoryGroup.activeSelf;
         buildActive = BuildMenuGroup.activeSelf;
         upgradeActive = UpgradeMenuGroup.activeSelf;
+        cheatActive = CheatCodeMenuGroup.activeSelf;
 
-        if (inventoryActive || buildActive || upgradeActive || processActive) {
+        if (inventoryActive || buildActive || upgradeActive || processActive || cheatActive) {
             UIActive = true;
         } else {
             UIActive = false;
@@ -122,6 +124,29 @@ public class InventoryController : MonoBehaviour
             else
             {
                 Debug.LogWarning("MainInventoryGroup 'upgrade' is not assigned in the Inspector.");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (CheatCodeMenuGroup != null)
+            {
+                inventoryActive = false;
+                upgradeActive = false;
+                processActive = false;
+                buildActive = false;
+                ProcessMenuGroup.SetActive(processActive);
+                MainInventoryGroup.SetActive(inventoryActive);
+                UpgradeMenuGroup.SetActive(upgradeActive);
+                BuildMenuGroup.SetActive(buildActive);
+
+                cheatActive = !cheatActive;
+                CursorSwitch(cheatActive);
+                CheatCodeMenuGroup.SetActive(cheatActive);
+            }
+            else
+            {
+                Debug.LogWarning("MainInventoryGroup 'build' is not assigned in the Inspector.");
             }
         }
     }

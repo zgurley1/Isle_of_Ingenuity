@@ -51,7 +51,6 @@ public class UpgradeActions : MonoBehaviour
             Vector3 boatPlacePosition = boatPosition.transform.position;
             Quaternion boatPlaceRotation = boatPosition.transform.rotation;
 
-            Destroy(boatPosition);
             Instantiate(boat, boatPlacePosition, boatPlaceRotation);
 
             MaterialManager.UpgradeCostBoat();
